@@ -3,12 +3,6 @@ import "./Navbar.css";
 
 class Navbar extends Component {
 
-  state = {
-
-    token: '',
-
-  }
-
   componentDidMount() {
 
     /* if (localStorage.getItem('user_token')) {
