@@ -6,13 +6,14 @@ import {
 } from "react-router-dom";
 
 //Pages
-import Index from '../pages/Index/Index.jsx';
+import Home from '../pages/Home/Home.jsx';
 
 function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Index/>}/>
+        <Route path="/" element={<Home/>}/>
+        {/* <Route path="/Conócenos" element={<Home/>}/> */}
       </Routes>
     </BrowserRouter>
   );
