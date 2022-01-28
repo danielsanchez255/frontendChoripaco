@@ -2,13 +2,21 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Product from './Product/Product.jsx';
 
-const Products = () => {
-    const products = useSelector((state) => state.products)
+const Products = ({ setCurrentId }) => {
+    const products = useSelector((state) => state.products);
+    console.log(products);
     return (
-        <div>
-            <h1>Productos</h1>
-            <Product />
-        </div>
+        !products.length ? <h1>No hay recursos</h1> : (
+            <div className="container">
+                <div className="row">
+                    {products.map((product) => (
+                        <div className="col-md-4">
+                            <Product product={product} setCurrentId={setCurrentId} />
+                        </div>
+                    ))}
+                </div>
+            </div>
+        )        
     );
 }
 

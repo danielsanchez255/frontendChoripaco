@@ -31,7 +31,6 @@ class Navbar extends Component {
             <header>
                 <div className="navbar navbar-expand-md">
                     <div className="container">
-                        <a href="#" className="navbar-brand">LOGO</a>
                         <button className="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                             <div id="nav-icon">
                             <span></span>
@@ -42,6 +41,7 @@ class Navbar extends Component {
                             <span></span>
                             </div>
                         </button>
+                        <a href="#" className="navbar-brand">LOGO</a>
                     </div>
                 </div>
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 //Components
 import Navbar from '../../components/Navbar/Navbar.jsx';
@@ -11,6 +11,7 @@ import { useDispatch } from 'react-redux';
 
 const Home = () =>  {
 
+    const [currentId, setCurrentId] = useState(null);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -22,11 +23,11 @@ const Home = () =>  {
             <Navbar />
             <div className="container">
                 <div className="row">
-                    <div className="col-md-6 mt-5">
-                        <Products />
+                    <div className="col-md-8 mt-5">
+                        <Products setCurrentId={setCurrentId} />
                     </div>
-                    <div className="col-md-6 mt-5">
-                        <Form />
+                    <div className="col-md-4 mt-5">
+                        <Form currentId={currentId} setCurrentId={setCurrentId} />
                     </div>
                 </div>
             </div>

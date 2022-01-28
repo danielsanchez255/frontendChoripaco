@@ -19,3 +19,12 @@ export const createProduct = (product) => async(dispatch) => {
         console.log(error.message);
     }
 }
+
+export const updateProduct = (id, product) => async(dispatch) => {
+    try {
+        const { data } = await api.updateProduct(id, product);
+        dispatch({type: 'UPDATE', payload: data});
+    } catch (error) {
+        console.log(error.message);
+    }
+}

@@ -1,23 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Filebase from 'react-file-base64';
 
-import { useDispatch } from 'react-redux';
-import { createProduct } from '../../services/actions/products.js'
+import { useDispatch, useSelector } from 'react-redux';
+import { createProduct, updateProduct } from '../../services/actions/products.js'
 
-const Form = () => {
+const Form = ({ currentId, setCurrentId }) => {
 
     const [postData, setPostData] = useState({
         name: '', stock: '', price: '', category: '', imageProduct: ''
     });
+    const product = useSelector((state) => currentId ? state.products.find((p) => p._id === currentId) : null);
     const dispatch = useDispatch();
 
-    /* const clear = () => {
+    const clear = () => {
+        setCurrentId(null);
+        setPostData({ name: '', stock: '', price: '', category: '', imageProduct: '' });
+    }
 
-    } */
+    useEffect(() => {
+        if (product) setPostData(product)
+    }, [product])
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(createProduct(postData));
+
+        if (currentId) {
+            dispatch(updateProduct(currentId, postData));
+            clear();
+        } else {
+            dispatch(createProduct(postData));
+            clear();
+        }
     }
 
     return (
