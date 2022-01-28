@@ -29,10 +29,10 @@ class Navbar extends Component {
     return (
         <div>
             <header>
-                <div class="navbar navbar-expand-md">
-                    <div class="container">
-                        <a href="#" class="navbar-brand">LOGO</a>
-                        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <div className="navbar navbar-expand-md">
+                    <div className="container">
+                        <a href="#" className="navbar-brand">LOGO</a>
+                        <button className="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                             <div id="nav-icon">
                             <span></span>
                             <span></span>
@@ -46,19 +46,19 @@ class Navbar extends Component {
                 </div>
 
                 <nav>
-                    <div id="navbarNavDropdown" class="navbar-collapse collapse text-center">
-                        <ul id="main-menu" class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="/tienda" class="nav-link">Tienda</a>
+                    <div id="navbarNavDropdown" className="navbar-collapse collapse text-center">
+                        <ul id="main-menu" className="navbar-nav">
+                        <li className="nav-item">
+                            <a href="/tienda" className="nav-link">Tienda</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="/conocenos" class="nav-link">Conocenos</a>
+                        <li className="nav-item">
+                            <a href="/conocenos" className="nav-link">Conocenos</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="/encuentranos" class="nav-link">Encuentranos</a>
+                        <li className="nav-item">
+                            <a href="/encuentranos" className="nav-link">Encuentranos</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="/contactanos" class="nav-link">Contactanos</a>
+                        <li className="nav-item">
+                            <a href="/contactanos" className="nav-link">Contactanos</a>
                         </li>
                         </ul>
                     </div>

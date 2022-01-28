@@ -1,10 +1,21 @@
-export default (products = [], action) => {
-    switch (action.type) {
-        case 'FETCH_ALL':
-            return products;
-        case 'CREATE':
-            return products;
-        default:
-            return products;
+import * as api from '../../api';
+
+//Action creators
+
+export const getProducts = () => async(dispatch) => {
+    try {
+        const { data } = await api.fetchProducts();
+        dispatch({type: 'FETCH_ALL', payload: data});
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+
+export const createProduct = (product) => async(dispatch) => {
+    try {
+        const { data } = await api.createProduct(product);
+        dispatch({type: 'CREATE', payload: data});
+    } catch (error) {
+        console.log(error.message);
     }
 }
