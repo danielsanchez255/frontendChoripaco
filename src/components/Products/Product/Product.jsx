@@ -1,8 +1,14 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+
+import { deleteProduct } from '../../../services/actions/products.js';
+
 import moment from 'moment';
 import 'moment/locale/es';
 
 const Product = ({ product, setCurrentId }) => {
+
+    const dispatch = useDispatch();
 
     const fromNowInSpanish = (date) => {
         moment.locale('es');
@@ -24,7 +30,7 @@ const Product = ({ product, setCurrentId }) => {
                     <b>Creado { fromNowInSpanish(product.createdAt) }</b>
                 </p>
                 <a href="#" className="btn btn-primary mt-1 mr-1" onClick={() => setCurrentId(product._id)}>Modificar</a>
-                <a href="#" className="btn btn-danger mt-1 mr-1" onClick={() => {}}>Eliminar</a>
+                <a href="#" className="btn btn-danger mt-1 mr-1" onClick={() => dispatch(deleteProduct(product._id))}>Eliminar</a>
             </div>
         </div>
     );
