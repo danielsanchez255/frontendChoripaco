@@ -23,7 +23,7 @@ const Product = ({ product, setCurrentId }) => {
             <div className="card-body">
                 <h5 className="card-title">{ product.name }</h5>
                 <p className="card-text">
-                    <b>Precio: </b> { product.price }
+                    <b>Precio: $</b> { product.price }
                     <br/>
                     <b>Categoría: </b> { product.category }
                     <br/>

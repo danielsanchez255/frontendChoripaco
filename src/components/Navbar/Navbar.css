@@ -1,11 +1,20 @@
+/*Fonts*/
+/*Adding a custom fonts*/
+@font-face {
+    font-family: "Lyons"; 
+    src:
+    url("../../assets/fonts/538Lyons\ Rounded.ttf");
+}
+
+/*Navbar*/
 .navbar {
-    position: fixed;
     width: 100%;
+    margin-top: -9px;
 }
   
 .navbar-expand-md {
     z-index: 99;
-    background: white;
+    background: #ae2a18;
     padding: 0;
 }
 
@@ -15,7 +24,7 @@
 
 .navbar-collapse {
     width: 100%;
-    background: #ac3026;
+    background: transparent;
     position: fixed;
     z-index: 9;
     display: block;
@@ -48,8 +57,24 @@
     justify-content: center;
 }
 
+.navbar-collapse ul.navbar-nav .first{
+    background-color: #e8412c;
+}
+
+.navbar-collapse ul.navbar-nav .second{
+    background-color: #ef7d6f;
+}
+
+.navbar-collapse ul.navbar-nav .third{
+    background-color: #bc5e52;
+}
+
+.navbar-collapse ul.navbar-nav .fourth{
+    background-color: #7b1e12;
+}
+
 .navbar-collapse ul.navbar-nav li:hover {
-    background-color: black;
+    background-color: #ae2a18;
     color: white;
 }
 
@@ -113,7 +138,7 @@
     position: absolute;
     height: 5px;
     width: 50%;
-    background: #ac3026;
+    background: #fff;
     opacity: 1;
     transform: rotate(0deg);
     transition: 0.25s ease-in-out;
@@ -175,4 +200,28 @@
 .navbar-toggler[aria-expanded="true"] #nav-icon span:nth-child(6) {
     left: calc(50% - 5px);
     top: 12px;
+}
+
+.btn-cart {
+    background-color: #442a0b;
+    color: #fff;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: 1px solid #fff;
+}
+
+.btn-cart:hover {
+    background-color: #442a0b;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.link-cart {
+    color: #fff;
+    font-family: 'Lyons';
+}
+
+.link-cart:hover {
+    background-color: #fff;
+    color: #442a0b;
 }

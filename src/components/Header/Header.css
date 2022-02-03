@@ -1,0 +1,21 @@
+/*Fonts*/
+/*Adding a custom fonts*/
+@font-face {
+    font-family: "Lyons"; 
+    src:
+    url("../../assets/fonts/538Lyons\ Rounded.ttf");
+}
+
+.headerChoripaco {
+    background-image: url("https://www.consumer.es/wp-content/uploads/2019/07/img_chorizo-elegir-buena-calidad-hd-1-1280x720.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+
+.headerChoripaco h1 {
+    text-align: center;
+    padding: 20px 0px;
+    color: #fff;
+    font-family: 'Lyons';
+}

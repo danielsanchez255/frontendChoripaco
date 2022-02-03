@@ -1,72 +1,70 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import "./Navbar.css";
 
 class Navbar extends Component {
 
-  componentDidMount() {
+    render() {
 
-    /* if (localStorage.getItem('user_token')) {
+        const buttonChangePosition = (e) => {
+            e.preventDefault();
+            /* const nav = document.getElementById('navbar').getBoundingClientRect(); */
+            const navPosition = document.getElementById("navbar").style.position;
+            if (navPosition == 'relative') {
+                document.getElementById("navbar").style.position = "fixed";
+                document.getElementById("navbar").style.top = "7px";
+            } else if (navPosition == 'fixed') {
+                document.getElementById("navbar").style.position = "relative";
+                document.getElementById("navbar").style.top = "0px";
+            }
+        }
 
-      this.setState({
-        token: localStorage.getItem('user_token')
-      })
-      
-    } */
-
-  }
-
-  logout = () => {
-
-    /* this.setState({
-      token: ''
-    })
-    localStorage.removeItem('user_token')
-    window.location.href = "/login" */
-
-  }
-
-  render() {
-    return (
-        <div>
-            <header>
-                <div className="navbar navbar-expand-md">
+        return (
+            <>
+                <div className="navbar navbar-expand-md" id="navbar" style={{ position: 'relative' }}>
                     <div className="container">
-                        <button className="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <button className="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" onClick={e => buttonChangePosition(e)}>
                             <div id="nav-icon">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
                             </div>
                         </button>
-                        <a href="#" className="navbar-brand">LOGO</a>
+                        
+                        <a href="#" className="navbar-brand link-cart">
+                            Tienda 
+                            <button className="btn rounded-circle btn-cart ml-2">
+                                <FontAwesomeIcon icon={faCartPlus} />
+                            </button>
+                        </a>
                     </div>
                 </div>
 
                 <nav>
                     <div id="navbarNavDropdown" className="navbar-collapse collapse text-center">
                         <ul id="main-menu" className="navbar-nav">
-                        <li className="nav-item">
-                            <a href="/tienda" className="nav-link">Tienda</a>
-                        </li>
-                        <li className="nav-item">
-                            <a href="/conocenos" className="nav-link">Conocenos</a>
-                        </li>
-                        <li className="nav-item">
-                            <a href="/encuentranos" className="nav-link">Encuentranos</a>
-                        </li>
-                        <li className="nav-item">
-                            <a href="/contactanos" className="nav-link">Contactanos</a>
-                        </li>
+                            <li className="nav-item first">
+                                <a href="/tienda" className="nav-link">Tienda</a>
+                            </li>
+                            <li className="nav-item second">
+                                <a href="/conocenos" className="nav-link">Conocenos</a>
+                            </li>
+                            <li className="nav-item third">
+                                <a href="/encuentranos" className="nav-link">Encuentranos</a>
+                            </li>
+                            <li className="nav-item fourth">
+                                <a href="/contactanos" className="nav-link">Contactanos</a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
-            </header>
-        </div>
-    )
-  }
+            </>
+        )
+    }
 }
 
 export default Navbar;

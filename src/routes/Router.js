@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 
 //Pages
+import Admin from '../pages/Admin/Admin.jsx'
 import Home from '../pages/Home/Home.jsx';
 
 function Router() {
@@ -13,7 +14,7 @@ function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        {/* <Route path="/Conócenos" element={<Home/>}/> */}
+        <Route path="/admin" element={<Admin/>}/>
       </Routes>
     </BrowserRouter>
   );

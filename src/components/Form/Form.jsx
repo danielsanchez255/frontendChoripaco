@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Filebase from 'react-file-base64';
+import './Form.css';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { createProduct, updateProduct } from '../../services/actions/products.js'
@@ -37,42 +38,42 @@ const Form = ({ currentId, setCurrentId }) => {
         <>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label for="exampleName">Nombre: </label>
+                    <h5>Formulario del producto: </h5>
                     <input 
                         type="text" 
-                        className="form-control" 
+                        className="form-field" 
                         aria-describedby="nameHelp" 
+                        placeholder="Nombre del producto"
                         value={postData.name} 
                         onChange={(e) => setPostData({ ...postData ,name: e.target.value })} 
                     />
-                    <small id="nameHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <small id="nameHelp" className="form-text text-muted">No se ha ingresado el nombre.</small>
                 </div>
                 <div className="form-group">
-                    <label for="exampleStock">Stock: </label>
                     <input 
                         type="number" 
-                        className="form-control" 
+                        className="form-field" 
                         aria-describedby="stockHelp" 
+                        placeholder="Cantidad del producto"
                         value={postData.stock} 
                         onChange={(e) => setPostData({ ...postData ,stock: e.target.value })} 
                     />
-                    <small id="stockHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <small id="stockHelp" className="form-text text-muted">No se ha ingresado el stock.</small>
                 </div>
                 <div className="form-group">
-                    <label for="examplePrice">Precio: </label>
                     <input 
                         type="number" 
-                        className="form-control" 
+                        className="form-field" 
                         aria-describedby="priceHelp" 
+                        placeholder="Precio del producto"
                         value={postData.price} 
                         onChange={(e) => setPostData({ ...postData ,price: e.target.value })} 
                     />
-                    <small id="priceHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <small id="priceHelp" className="form-text text-muted">No se ha ingresado el precio.</small>
                 </div>
                 <div className="form-group">
-                    <label for="exampleCategory">Categoría</label>
                     <select 
-                        className="form-control"
+                        className="form-field"
                         value={postData.category} 
                         onChange={(e) => setPostData({ ...postData ,category: e.target.value })} 
                     >
@@ -86,7 +87,8 @@ const Form = ({ currentId, setCurrentId }) => {
                 <div className="form-group">
                     <label for="exampleFormControlFile1">Example file input</label>
                     <br />
-                    <Filebase className="form-control" type="file" multiple={false} onDone={({base64}) => setPostData({ ...postData ,imageProduct: base64 })} />
+                    <Filebase id="inputfile" type="file" multiple={false} onDone={({base64}) => setPostData({ ...postData ,imageProduct: base64 })} />
+                    <label for="file">Choose a file</label>
                 </div>
                 <button type="submit" className="btn btn-primary">Crear</button>
             </form>
