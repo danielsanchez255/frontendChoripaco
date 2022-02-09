@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
 //Components
-import Form from '../../components/Form/Form.jsx';
-import Products from '../../components/Products/Products.jsx';
-import Sidebar from '../../components/Sidebar/Sidebar.jsx';
+import ProductForm from '../../../components/ProductForm/ProductForm.jsx';
+import Products from '../../../components/Products/Products.jsx';
+import Sidebar from '../../../components/Sidebar/Sidebar.jsx';
 
 //Redux
-import { getProducts } from '../../services/actions/products.js'
+import { getProducts } from '../../../services/actions/products.js'
 import { useDispatch } from 'react-redux';
 
-const Admin = () =>  {
+const ProductsAdmin = () =>  {
 
     const [currentId, setCurrentId] = useState(null);
     const dispatch = useDispatch();
@@ -27,7 +27,7 @@ const Admin = () =>  {
                         <Products setCurrentId={setCurrentId} />
                     </div>
                     <div className="col-md-3 mt-5">
-                        <Form currentId={currentId} setCurrentId={setCurrentId} />
+                        <ProductForm currentId={currentId} setCurrentId={setCurrentId} />
                     </div>
                 </div>
             </div>
@@ -37,4 +37,4 @@ const Admin = () =>  {
 
 }
 
-export default Admin;
+export default ProductsAdmin;

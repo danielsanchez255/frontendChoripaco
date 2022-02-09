@@ -16,16 +16,19 @@ class Sidebar extends Component {
 
                         <ul className="list-unstyled components">
                             <p>Administrador</p>
-                            <li className="active">
+                            <li>
                                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Productos</a>
                                 <ul className="collapse list-unstyled" id="homeSubmenu">
-                                    <li>
+                                    <li className="active">
                                         <a href="#">Producto</a>
                                     </li>
                                     <li>
                                         <a href="#">Categoría</a>
                                     </li>
                                 </ul>
+                            </li>
+                            <li>
+                                <a href="#">Pedidos</a>
                             </li>
                             <li>
                                 <a href="#">Usuarios</a>

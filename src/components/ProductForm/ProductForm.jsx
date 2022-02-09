@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Filebase from 'react-file-base64';
-import './Form.css';
+import './ProductForm.css';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { createProduct, updateProduct } from '../../services/actions/products.js'
 
-const Form = ({ currentId, setCurrentId }) => {
+const ProductForm = ({ currentId, setCurrentId }) => {
 
     const [postData, setPostData] = useState({
         name: '', stock: '', price: '', category: '', imageProduct: ''
@@ -96,4 +96,4 @@ const Form = ({ currentId, setCurrentId }) => {
     );
 }
 
-export default Form;
+export default ProductForm;
