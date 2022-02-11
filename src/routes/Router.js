@@ -6,8 +6,9 @@ import {
 } from "react-router-dom";
 
 //Pages
-import ProductsAdmin from '../pages/Admin/ProductsAdmin/ProductsAdmin.jsx'
 import Home from '../pages/Home/Home.jsx';
+import CategoriesAdmin from '../pages/Admin/CategoriesAdmin/CategoriesAdmin.jsx';
+import ProductsAdmin from '../pages/Admin/ProductsAdmin/ProductsAdmin.jsx'
 
 function Router() {
   return (
@@ -15,6 +16,7 @@ function Router() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/admin" element={<ProductsAdmin/>}/>
+        <Route path="/admin/categorias" element={<CategoriesAdmin/>}/>
       </Routes>
     </BrowserRouter>
   );
