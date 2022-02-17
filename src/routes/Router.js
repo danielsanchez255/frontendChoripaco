@@ -15,8 +15,8 @@ function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/admin" element={<ProductsAdmin/>}/>
-        <Route path="/admin/categorias" element={<CategoriesAdmin/>}/>
+        <Route path="/administrador/productos" element={<ProductsAdmin/>}/>
+        <Route path="/administrador/categorias" element={<CategoriesAdmin/>}/>
       </Routes>
     </BrowserRouter>
   );

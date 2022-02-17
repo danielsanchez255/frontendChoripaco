@@ -4,13 +4,16 @@ import './ProductForm.css';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { createProduct, updateProduct } from '../../services/actions/products.js';
+import { getCategories } from '../../services/actions/categories.js';
 
 const ProductForm = ({ currentId, setCurrentId }) => {
 
     const [postData, setPostData] = useState({
         name: '', stock: '', price: '', category: '', imageProduct: ''
     });
+    
     const product = useSelector((state) => currentId ? state.products.find((p) => p._id === currentId) : null);
+    const categories = useSelector((state) => state.categories);
     const dispatch = useDispatch();
 
     const clear = () => {
@@ -19,6 +22,7 @@ const ProductForm = ({ currentId, setCurrentId }) => {
     }
 
     useEffect(() => {
+        dispatch(getCategories());
         if (product) setPostData(product)
     }, [product])
 
@@ -33,6 +37,8 @@ const ProductForm = ({ currentId, setCurrentId }) => {
             clear();
         }
     }
+
+    console.log("Lo que trae en el form: ", categories);
 
     return (
         <>
@@ -77,11 +83,15 @@ const ProductForm = ({ currentId, setCurrentId }) => {
                         value={postData.category} 
                         onChange={(e) => setPostData({ ...postData ,category: e.target.value })} 
                     >
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
+                        {
+                            !categories.length ? <h1>No hay categorías</h1> : 
+                                categories.map((category) => (
+                                    <option value={category._id}>
+                                        {category.name}
+                                    </option>
+                                ))
+                                 
+                        }
                     </select>
                 </div>
                 <div className="form-group">

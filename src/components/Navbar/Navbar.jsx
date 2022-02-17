@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+import cart from '../../assets/img/logo_cesta.png'
 import "./Navbar.css";
 
 class Navbar extends Component {
@@ -13,7 +14,7 @@ class Navbar extends Component {
             const navPosition = document.getElementById("navbar").style.position;
             if (navPosition == 'relative') {
                 document.getElementById("navbar").style.position = "fixed";
-                document.getElementById("navbar").style.top = "7px";
+                document.getElementById("navbar").style.top = "0px";
             } else if (navPosition == 'fixed') {
                 document.getElementById("navbar").style.position = "relative";
                 document.getElementById("navbar").style.top = "0px";
@@ -37,9 +38,8 @@ class Navbar extends Component {
                         
                         <a href="#" className="navbar-brand link-cart">
                             Tienda 
-                            <button className="btn rounded-circle btn-cart ml-2">
-                                <FontAwesomeIcon icon={faCartPlus} />
-                            </button>
+                            <img className="linkCartImage" src={cart} alt="cart" srcSet={cart} />
+                            {/* <span className="badge badge-pill badge-light badge-navbar">4</span> */}
                         </a>
                     </div>
                 </div>

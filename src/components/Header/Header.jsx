@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import logo from '../../assets/img/logo_crema.png';
+import Navbar from '../Navbar/Navbar.jsx'
 import "./Header.css";
 
 class Header extends Component {
@@ -29,7 +31,8 @@ class Header extends Component {
     return (
         <>
             <header className="headerChoripaco">
-                <h1>CHORIPACO</h1>
+                <img className="headerImage" src={logo} alt="logo" />
+                <Navbar />
             </header>
         </>
     )

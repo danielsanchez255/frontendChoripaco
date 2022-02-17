@@ -6,7 +6,7 @@ import ProductForm from '../../../components/CategoryForm/CategoryForm.jsx';
 import Sidebar from '../../../components/Sidebar/Sidebar.jsx';
 
 //Redux
-import { getCategories } from '../../../services/actions/categories.js';
+import { getCategories, deleteCategory } from '../../../services/actions/categories.js';
 import { useDispatch, useSelector } from 'react-redux';
 
 const CategoriesAdmin = () =>  {
@@ -32,7 +32,7 @@ const CategoriesAdmin = () =>  {
                                         {categories.map((category) => (
                                             <li class="list-group-item">
                                                 {category.name}
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <button type="button" class="close" aria-label="Close" onClick={() => dispatch(deleteCategory(category._id))}>
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </li>

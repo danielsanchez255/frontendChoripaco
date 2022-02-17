@@ -6,7 +6,7 @@ import Products from '../../../components/Products/Products.jsx';
 import Sidebar from '../../../components/Sidebar/Sidebar.jsx';
 
 //Redux
-import { getProducts } from '../../../services/actions/products.js'
+import { getProducts } from '../../../services/actions/products.js';
 import { useDispatch } from 'react-redux';
 
 const ProductsAdmin = () =>  {

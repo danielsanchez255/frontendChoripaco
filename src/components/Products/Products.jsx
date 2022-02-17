@@ -5,7 +5,6 @@ import './Products.css';
 
 const Products = ({ setCurrentId }) => {
     const products = useSelector((state) => state.products);
-    console.log(products);
     return (
         !products.length ? <h1>No hay recursos</h1> : (
             <div className="layoutProducts">
