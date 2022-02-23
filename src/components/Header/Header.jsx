@@ -31,8 +31,10 @@ class Header extends Component {
     return (
         <>
             <header className="headerChoripaco">
-                <img className="headerImage" src={logo} alt="logo" />
-                <Navbar />
+                <div className="headerShadowChoripaco">
+                    <img className="headerImage" src={logo} alt="logo" />
+                    <Navbar />
+                </div>
             </header>
         </>
     )

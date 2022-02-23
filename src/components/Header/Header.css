@@ -16,6 +16,11 @@
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 99;
+}
+
+.headerShadowChoripaco {
+    background-color: rgba(174, 42, 24, .5);
 }
 
 .headerChoripaco .headerImage {
