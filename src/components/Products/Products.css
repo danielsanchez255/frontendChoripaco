@@ -2,3 +2,35 @@
     overflow-y: scroll; 
     height: 40vw;
 }
+
+/* Responsive Breakpoints */
+/* Extra small devices */
+@media only screen and (max-width: 600px) {
+    .layoutProducts {
+        overflow-y: scroll; 
+        height: 180vw;
+    }
+}
+  
+/* Small devices */
+@media screen and (max-width: 767px) and (min-width: 600px) {
+    .layoutProducts {
+        overflow-y: scroll; 
+        height: 180vw;
+    }
+}
+  
+/* Medium devices */
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+
+}
+  
+/* Large devices */
+@media only screen and  (max-width: 1199px) and (min-width: 992px) {
+  
+}
+  
+/* Extra large devices */
+@media screen and (min-width: 1200px){
+
+}

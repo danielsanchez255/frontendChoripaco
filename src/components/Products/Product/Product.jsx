@@ -21,7 +21,7 @@ const Product = ({ product, setCurrentId }) => {
         <div className="card mb-3" style={{ width: '100%' }}>
             <img src={ product.imageProduct } class="card-img-top" alt="..." />
             <div className="card-body">
-                <h5 className="card-title">{ product.name }</h5>
+                <h5 className="card-title text-dark">{ product.name }</h5>
                 <p className="card-text">
                     <b>Precio: $</b> { product.price }
                     <br/>

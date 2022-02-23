@@ -209,21 +209,15 @@
     border: 1px solid #fff;
 }
 
-.btn-cart:hover {
-    background-color: #442a0b;
-    color: #fff;
-    border: 1px solid #fff;
-}
-
 .link-cart {
     color: #fff;
     font-family: 'Lyons';
 }
 
-.link-cart:hover {
+/* .link-cart:hover {
     background-color: #fff;
     color: #442a0b;
-}
+} */
 
 .link-cart .linkCartImage {
     margin-top: -14px;

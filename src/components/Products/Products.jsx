@@ -9,7 +9,7 @@ const Products = ({ setCurrentId }) => {
         !products.length ? <h1>No hay recursos</h1> : (
             <div className="layoutProducts">
                 <div className="container">
-                    <div className="row">
+                    <div className="row pt-5 pb-4">
                         {products.map((product) => (
                             <div className="col-md-4">
                                 <Product product={product} setCurrentId={setCurrentId} />
