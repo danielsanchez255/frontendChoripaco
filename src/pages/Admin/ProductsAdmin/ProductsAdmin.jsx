@@ -24,7 +24,7 @@ const ProductsAdmin = () =>  {
             <div className="container">
                 <div className="row">
                     <div className="col-md-7 mt-5 offset-md-2">
-                        <Products setCurrentId={setCurrentId} />
+                        <Products administrator={true} setCurrentId={setCurrentId} />
                     </div>
                     <div className="col-md-3 mt-5">
                         <ProductForm currentId={currentId} setCurrentId={setCurrentId} />

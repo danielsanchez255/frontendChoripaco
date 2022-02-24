@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import background from '../../assets/img/fondo.png';
+import background from '../../assets/img/cafe.png';
 import './Shop.css';
 
 //Components
@@ -24,7 +24,7 @@ const Shop = () =>  {
             <div style={{ backgroundImage: 'url(' + background + ')', backgroundSize: 'cover', backgroundAttachment: 'fixed' }}>
                 <Header />
                 <div className="content">
-                    <Products setCurrentId={setCurrentId} />
+                    <Products administrator={false} setCurrentId={setCurrentId} />
                 </div>
             </div>       
         </>

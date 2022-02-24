@@ -224,3 +224,35 @@
     width: 60px;
     position: absolute;
 }
+
+/* Responsive Breakpoints */
+/* Extra small devices */
+@media only screen and (max-width: 600px) {
+    .navbar-toggler {
+        margin-left: 12px;
+    }
+
+    .link-cart {
+        margin-right: 65px;
+    }
+}
+  
+/* Small devices */
+@media screen and (max-width: 767px) and (min-width: 600px) {
+    
+}
+  
+/* Medium devices */
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+
+}
+  
+/* Large devices */
+@media only screen and  (max-width: 1199px) and (min-width: 992px) {
+  
+}
+  
+/* Extra large devices */
+@media screen and (min-width: 1200px){
+
+}

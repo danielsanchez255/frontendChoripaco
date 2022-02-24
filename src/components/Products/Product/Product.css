@@ -1,0 +1,11 @@
+.card, .card img {
+    border-radius: 1rem !important;
+}
+
+.card-img-overlay {
+    top: unset !important;
+}
+
+.card-text {
+    font-size: 14px;
+}

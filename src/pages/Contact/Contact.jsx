@@ -1,5 +1,5 @@
 import React from 'react';
-import background from '../../assets/img/fondo.png';
+import background from '../../assets/img/cafe.png';
 import './Contact.css';
 
 //Components
