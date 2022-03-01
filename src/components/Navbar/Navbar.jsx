@@ -15,9 +15,12 @@ class Navbar extends Component {
             if (navPosition == 'relative') {
                 document.getElementById("navbar").style.position = "fixed";
                 document.getElementById("navbar").style.top = "0px";
+                document.getElementById("link-cart").style.display = "none";
+                document.getElementById("navbar").style.height = "40px";
             } else if (navPosition == 'fixed') {
                 document.getElementById("navbar").style.position = "relative";
                 document.getElementById("navbar").style.top = "0px";
+                document.getElementById("link-cart").style.display = "initial";
             }
         }
 
@@ -36,7 +39,7 @@ class Navbar extends Component {
                             </div>
                         </button>
                         
-                        <a href="#" className="navbar-brand link-cart">
+                        <a href="#" className="navbar-brand link-cart" id="link-cart">
                             Tienda 
                             <img className="linkCartImage" src={cart} alt="cart" srcSet={cart} />
                             {/* <span className="badge badge-pill badge-light badge-navbar">4</span> */}
