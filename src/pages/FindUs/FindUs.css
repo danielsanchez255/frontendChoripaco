@@ -1,0 +1,24 @@
+iframe {
+    border: 3px solid #faf8e3 !important;
+    border-radius: 2.5rem;
+}
+
+.social-networks {
+    background-color: #faf8e3;
+    margin: 0px 10px 0px 10px;
+    border-radius: 50rem;
+    font-size: 30px;
+    position: relative;
+}
+
+.social-networks:hover {
+    color: #513824;
+}
+
+.follow-us-text {
+    position: relative;
+    display: inline-block;
+    margin: 0px 10px 10px 10px;
+    font-weight: bold;
+    color: #faf8e3;
+}

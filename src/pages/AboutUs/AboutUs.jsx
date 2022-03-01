@@ -17,7 +17,7 @@ const AboutUs = () =>  {
                             <div className="col-md-6">
                                 <div className="card mb-4">
                                     <div className="card-body">
-                                        <h2 className="card-title text-dark">Misión</h2>
+                                        <h2 className="card-title text-choripaco">Mision</h2>
                                         <p className="card-text">
                                             Lorem ipsum dolor sit amet consectetur adipiscing elit feugiat 
                                             rutrum, quis posuere tristique magna eget vel blandit lacus. 
@@ -33,7 +33,7 @@ const AboutUs = () =>  {
                             <div className="col-md-6">
                                 <div className="card mb-4">
                                     <div className="card-body">
-                                        <h2 className="card-title text-dark">Visión</h2>
+                                        <h2 className="card-title text-choripaco">Vision</h2>
                                         <p className="card-text">
                                             Lorem ipsum dolor sit amet consectetur adipiscing elit feugiat 
                                             rutrum, quis posuere tristique magna eget vel blandit lacus. 
@@ -51,7 +51,7 @@ const AboutUs = () =>  {
                             <div className="col-md-6">
                                 <div className="card mb-4">
                                     <div className="card-body">
-                                        <h2 className="card-title text-dark">Fábrica</h2>
+                                        <h2 className="card-title text-choripaco">Fabrica</h2>
                                         <p className="card-text">
                                             Lorem ipsum dolor sit amet consectetur adipiscing elit feugiat 
                                             rutrum, quis posuere tristique magna eget vel blandit lacus. 
@@ -67,7 +67,7 @@ const AboutUs = () =>  {
                             <div className="col-md-6">
                                 <div className="card mb-4">
                                     <div className="card-body">
-                                        <h2 className="card-title text-dark">Restaurante</h2>
+                                        <h2 className="card-title text-choripaco">Restaurante</h2>
                                         <p className="card-text">
                                             Lorem ipsum dolor sit amet consectetur adipiscing elit feugiat 
                                             rutrum, quis posuere tristique magna eget vel blandit lacus. 
