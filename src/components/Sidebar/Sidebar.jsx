@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+import logo from '../../assets/img/logo_crema.png';
 import "./Sidebar.css";
 
 class Sidebar extends Component {
@@ -11,7 +10,7 @@ class Sidebar extends Component {
                 <div className="wrapper">
                     <nav id="sidebar">
                         <div className="sidebar-header">
-                            <h3>Choripaco Logo</h3>
+                            <img className="headerImage" src={logo} alt="logo" />
                         </div>
 
                         <ul className="list-unstyled components">

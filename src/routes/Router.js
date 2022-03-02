@@ -15,6 +15,7 @@ import Menu from '../pages/Menu/Menu.jsx';
 
 //Administrator
 import CategoriesAdmin from '../pages/Admin/CategoriesAdmin/CategoriesAdmin.jsx';
+import LoginAdmin from '../pages/Admin/LoginAdmin/LoginAdmin.jsx';
 import ProductsAdmin from '../pages/Admin/ProductsAdmin/ProductsAdmin.jsx';
 
 function Router() {
@@ -27,6 +28,7 @@ function Router() {
         <Route path="/contactanos" element={<Contact/>}/>
         <Route path="/tienda" element={<Shop/>}/>
         <Route path="/menu" element={<Menu/>}/>
+        <Route path="/administrador/entrar" element={<LoginAdmin/>}/>
         <Route path="/administrador/productos" element={<ProductsAdmin/>}/>
         <Route path="/administrador/categorias" element={<CategoriesAdmin/>}/>
       </Routes>

@@ -56,6 +56,10 @@ a:focus {
     background: #181e1c;
 }
 
+.sidebar-header {
+    text-align: center;
+}
+
 #sidebar ul.components {
     padding: 20px 0;
     /* border-bottom: 1px solid #faf8e3; */
@@ -127,6 +131,10 @@ a.article,
 a.article:hover {
     background: #181e1c !important;
     color: #fff !important;
+}
+
+.headerImage {
+    width: 20vh;
 }
 
 /* ---------------------------------------------------
