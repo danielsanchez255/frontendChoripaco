@@ -25,14 +25,14 @@ const CategoriesAdmin = () =>  {
             <div className="container">
                 <div className="row">
                     <div className="col-md-7 mt-5 offset-md-2">
-                        <ul class="list-group">
+                        <ul className="list-group">
                             {
                                 !categories.length ? <h1>No hay categorías</h1> : (
                                     <div className="layoutProducts">
                                         {categories.map((category) => (
-                                            <li class="list-group-item">
+                                            <li className="list-group-item">
                                                 {category.name}
-                                                <button type="button" class="close" aria-label="Close" onClick={() => dispatch(deleteCategory(category._id))}>
+                                                <button type="button" className="close" aria-label="Close" onClick={() => dispatch(deleteCategory(category._id))}>
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </li>
