@@ -93,10 +93,10 @@ const ProductForm = ({ currentId, setCurrentId }) => {
                     </select>
                 </div>
                 <div className="form-group">
-                    <label for="exampleFormControlFile1">Example file input</label>
+                    <label htmlFor="exampleFormControlFile1">Example file input</label>
                     <br />
                     <Filebase id="inputfile" type="file" multiple={false} onDone={({base64}) => setPostData({ ...postData ,imageProduct: base64 })} />
-                    <label for="file">Choose a file</label>
+                    <label htmlFor="file">Choose a file</label>
                 </div>
                 <button type="submit" className="btn btn-primary">Crear</button>
             </form>
