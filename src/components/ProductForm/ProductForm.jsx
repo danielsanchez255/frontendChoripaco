@@ -38,8 +38,6 @@ const ProductForm = ({ currentId, setCurrentId }) => {
         }
     }
 
-    console.log("Lo que trae en el form: ", categories);
-
     return (
         <>
             <form onSubmit={handleSubmit}>
