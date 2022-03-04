@@ -6,18 +6,23 @@ import './Products.css';
 const Products = ({ administrator, setCurrentId }) => {
     const products = useSelector((state) => state.products);
     return (
-        !products.length ? <h1>No hay recursos</h1> : (
-            <div className="layoutProducts">
-                <div className="container">
-                    <div className="row">
-                        {products.map((product) => (
-                            <div key={product._id} className="col-6 col-sm-6 col-md-4">
-                                <Product administrator={administrator} product={product} setCurrentId={setCurrentId} />
+        !products.length ? <div class="d-flex justify-content-center">
+                                <div class="spinner-border" role="status">
+                                <span class="sr-only">Loading...</span>
+                                </div>
+                            </div> 
+                        : (
+                            <div className="layoutProducts">
+                                <div className="container">
+                                    <div className="row mt-3">
+                                        {products.map((product) => (
+                                            <div key={product._id} className="col-6 col-sm-6 col-md-4">
+                                                <Product administrator={administrator} product={product} setCurrentId={setCurrentId} />
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
         )        
     );
 }

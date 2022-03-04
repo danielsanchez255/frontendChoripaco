@@ -32,7 +32,9 @@ class Header extends Component {
         <>
             <header className="headerChoripaco">
                 <div className="headerShadowChoripaco">
-                    <img className="headerImage" src={logo} alt="logo" />
+                    <a href="/">
+                        <img className="headerImage" src={logo} alt="logo" />
+                    </a>
                     <Navbar />
                 </div>
             </header>
