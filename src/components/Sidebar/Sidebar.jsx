@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/img/logo_crema.png';
 
 import { useDispatch } from 'react-redux';
@@ -11,7 +11,15 @@ const Sidebar = () => {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
 
     const dispatch = useDispatch();
+    const location = useLocation();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const token = user?.token;
+        console.log("Token: ", token);
+        console.log("Location: ", location);
+        setUser(JSON.parse(localStorage.getItem('profile')));
+    });
 
     const logout = () => {
         dispatch({ type: 'LOGOUT' });

@@ -42,12 +42,12 @@ const LoginAdmin = () =>  {
 
                                 <div className="form-outline mb-4">
                                     <input type="email" name="email" className="form-field" placeholder="Ingrese el email" onChange={handleChange} />
-                                    <label className="form-label mt-1" htmlhtmlFor="form3Example3">Email inválido</label>
+                                    <label className="form-label mt-1" htmlFor="form3Example3">Email inválido</label>
                                 </div>
 
                                 <div className="form-outline mb-3">
                                     <input type="password" name="password" className="form-field" placeholder="Ingrese la contraseña" onChange={handleChange} />
-                                    <label className="form-label mt-1" htmlhtmlFor="form3Example4">Contraseña inválida</label>
+                                    <label className="form-label mt-1" htmlFor="form3Example4">Contraseña inválida</label>
                                 </div>
 
                                 <div className="text-center text-lg-start mt-4 pt-2">

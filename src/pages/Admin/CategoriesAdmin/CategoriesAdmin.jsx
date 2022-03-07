@@ -27,7 +27,11 @@ const CategoriesAdmin = () =>  {
                     <div className="col-md-7 mt-5 offset-md-2">
                         <ul className="list-group">
                             {
-                                !categories.length ? <h1>No hay categorías</h1> : (
+                                !categories.length ? <div className="d-flex justify-content-center">
+                                                        <div className="spinner-border" role="status">
+                                                        <span className="sr-only">Loading...</span>
+                                                        </div>
+                                                    </div>  : (
                                     <div className="layoutProducts">
                                         {categories.map((category) => (
                                             <li className="list-group-item">

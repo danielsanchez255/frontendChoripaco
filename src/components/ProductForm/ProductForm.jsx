@@ -82,7 +82,9 @@ const ProductForm = ({ currentId, setCurrentId }) => {
                         onChange={(e) => setPostData({ ...postData ,category: e.target.value })} 
                     >
                         {
-                            !categories.length ? <h1>No hay categorías</h1> : 
+                            !categories.length ? <option value="null">
+                                                    No hay categorías disponibles
+                                                </option>  : 
                                 categories.map((category) => (
                                     <option value={category._id}>
                                         {category.name}
