@@ -9,6 +9,7 @@ import Products from '../../components/Products/Products';
 //Redux
 import { getProducts } from '../../services/actions/products.js';
 import { useDispatch } from 'react-redux';
+import Footer from '../../components/Footer/Footer';
 
 const Shop = () =>  {
 
@@ -26,6 +27,7 @@ const Shop = () =>  {
                 <div className="content">
                     <Products administrator={false} setCurrentId={setCurrentId} />
                 </div>
+                <Footer />
             </div>       
         </>
     );

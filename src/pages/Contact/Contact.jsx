@@ -5,6 +5,7 @@ import './Contact.css';
 //Components
 import Header from '../../components/Header/Header.jsx';
 import ContactForm from '../../components/ContactForm/ContactForm';
+import Footer from '../../components/Footer/Footer';
 
 const Contact = () =>  {
 
@@ -21,6 +22,7 @@ const Contact = () =>  {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>       
         </>
     );

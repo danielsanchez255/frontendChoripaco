@@ -4,6 +4,13 @@ import './Home.css';
 
 //Components
 import Header from '../../components/Header/Header.jsx';
+import Footer from '../../components/Footer/Footer';
+
+//Images
+import chorizos from '../../assets/img/chorizos.png';
+import lomo from '../../assets/img/lomo.png';
+import tocineta from '../../assets/img/tocineta.png';
+
 
 const Home = () =>  {
 
@@ -12,55 +19,27 @@ const Home = () =>  {
             <div style={{ backgroundImage: 'url(' + background + ')', backgroundSize: 'cover', backgroundAttachment: 'fixed' }}>
                 <Header />
                 <div className="content">
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit feugiat rutrum, quis posuere 
-                    tristique magna eget vel blandit lacus. Tristique himenaeos nunc euismod curae diam 
-                    magnis, sed aliquet nisi leo ligula justo, ac urna hendrerit parturient gravida. 
-                    Aenean felis aliquet et aliquam a risus nec potenti blandit sociis dictum, rutrum 
-                    faucibus proin curabitur sodales sollicitudin gravida egestas nunc nisi.
-                    <br/>
-                    <br/>
-                    Aliquet sollicitudin mattis suscipit scelerisque laoreet malesuada id pretium 
-                    parturient, mi sociosqu a quam habitant pellentesque tristique conubia, dis torquent 
-                    sapien porttitor gravida penatibus fames risus. Integer erat feugiat dictum ornare 
-                    odio praesent tortor dictumst tempus, vestibulum suspendisse dui montes volutpat iaculis 
-                    eget per, aliquet cras litora mauris laoreet ut quisque habitasse. Facilisis bibendum 
-                    cras interdum felis porta curabitur leo facilisi pretium, urna suscipit porttitor ac 
-                    gravida ultricies torquent quisque, ante erat nisi suspendisse at volutpat tellus nisl.
-                    <br/>
-                    <br/>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit feugiat rutrum, quis posuere 
-                    tristique magna eget vel blandit lacus. Tristique himenaeos nunc euismod curae diam 
-                    magnis, sed aliquet nisi leo ligula justo, ac urna hendrerit parturient gravida. 
-                    Aenean felis aliquet et aliquam a risus nec potenti blandit sociis dictum, rutrum 
-                    faucibus proin curabitur sodales sollicitudin gravida egestas nunc nisi.
-                    <br/>
-                    <br/>
-                    Aliquet sollicitudin mattis suscipit scelerisque laoreet malesuada id pretium 
-                    parturient, mi sociosqu a quam habitant pellentesque tristique conubia, dis torquent 
-                    sapien porttitor gravida penatibus fames risus. Integer erat feugiat dictum ornare 
-                    odio praesent tortor dictumst tempus, vestibulum suspendisse dui montes volutpat iaculis 
-                    eget per, aliquet cras litora mauris laoreet ut quisque habitasse. Facilisis bibendum 
-                    cras interdum felis porta curabitur leo facilisi pretium, urna suscipit porttitor ac 
-                    gravida ultricies torquent quisque, ante erat nisi suspendisse at volutpat tellus nisl.
-                    <br/>
-                    <br/>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit feugiat rutrum, quis posuere 
-                    tristique magna eget vel blandit lacus. Tristique himenaeos nunc euismod curae diam 
-                    magnis, sed aliquet nisi leo ligula justo, ac urna hendrerit parturient gravida. 
-                    Aenean felis aliquet et aliquam a risus nec potenti blandit sociis dictum, rutrum 
-                    faucibus proin curabitur sodales sollicitudin gravida egestas nunc nisi.
-                    <br/>
-                    <br/>
-                    Aliquet sollicitudin mattis suscipit scelerisque laoreet malesuada id pretium 
-                    parturient, mi sociosqu a quam habitant pellentesque tristique conubia, dis torquent 
-                    sapien porttitor gravida penatibus fames risus. Integer erat feugiat dictum ornare 
-                    odio praesent tortor dictumst tempus, vestibulum suspendisse dui montes volutpat iaculis 
-                    eget per, aliquet cras litora mauris laoreet ut quisque habitasse. Facilisis bibendum 
-                    cras interdum felis porta curabitur leo facilisi pretium, urna suscipit porttitor ac 
-                    gravida ultricies torquent quisque, ante erat nisi suspendisse at volutpat tellus nisl.
-                    <br/>
-                    <br/>
+                    <div id="mainDiv">
+                        <div id="posts">
+                            <div id="post1" class="post">
+                                <div class="postDiv" style={{ backgroundColor: '#f48071', backgroundImage: 'url(' + chorizos + ')', backgroundSize: '100%' }}>
+                                    Recetas
+                                </div>
+                            </div>
+                            <div id="post2" class="post">
+                                <div class="postDiv" style={{ backgroundColor: '#f04e39', backgroundImage: 'url(' + lomo + ')', backgroundSize: '100%' }}>
+                                    Menú
+                                </div>
+                            </div>
+                            <div id="post3" class="post">
+                                <div class="postDiv" style={{ backgroundColor: '#771a15', backgroundImage: 'url(' + tocineta + ')', backgroundSize: '100%' }}>
+                                    Reconocimientos
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <Footer />
             </div>       
         </>
     );

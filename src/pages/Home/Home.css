@@ -1,0 +1,34 @@
+#mainDiv {
+    
+    background-color:#ff8000;
+}
+
+#posts {
+    display:flex;
+    flex-flow:row wrap;
+}
+
+#post1 {
+    width:33%;
+    min-width:400px;
+    min-height:400px;
+    flex-grow:1;
+}
+
+#post2 {
+    width:33%;
+    min-width:400px;
+    min-height:400px;
+    flex-grow:1;
+}
+
+#post3 {
+    width:33%;
+    min-width:400px;
+    min-height:400px;
+    flex-grow:1;
+}
+
+.postDiv {
+    height:100%;
+}

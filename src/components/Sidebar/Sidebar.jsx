@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/img/logo_crema.png';
+import decode from 'jwt-decode'
 
 import { useDispatch } from 'react-redux';
 
@@ -16,8 +17,16 @@ const Sidebar = () => {
 
     useEffect(() => {
         const token = user?.token;
-        console.log("Token: ", token);
         console.log("Location: ", location);
+        if (token != undefined || token != null) {
+            if (token) {
+                const decodedToken = decode(token);
+
+                if (decodedToken.exp * 1000 < new Date().getTime()) logout();
+            }
+        } else {
+            navigate('/administrador/entrar');
+        }
         setUser(JSON.parse(localStorage.getItem('profile')));
     });
 

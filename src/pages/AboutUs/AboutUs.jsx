@@ -4,6 +4,7 @@ import './AboutUs.css';
 
 //Components
 import Header from '../../components/Header/Header.jsx';
+import Footer from '../../components/Footer/Footer';
 
 const AboutUs = () =>  {
 
@@ -83,6 +84,7 @@ const AboutUs = () =>  {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>       
         </>
     );
