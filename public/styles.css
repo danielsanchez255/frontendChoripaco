@@ -1,3 +1,17 @@
+/*Fonts*/
+/*Adding a custom fonts*/
+@font-face {
+    font-family: "Lyons"; 
+    src:
+    url("../src/assets/fonts/538Lyons\ Rounded.ttf");
+}
+
+@font-face {
+    font-family: "Futura"; 
+    src:
+    url("../src/assets/fonts/Futura.ttc");
+}
+
 .content {
     position: 'relative';
     margin-top: 12.3rem;
@@ -24,18 +38,4 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555; 
-}
-
-/*Fonts*/
-/*Adding a custom fonts*/
-@font-face {
-    font-family: "Lyons"; 
-    src:
-    url("../src/assets/fonts/538Lyons\ Rounded.ttf");
-}
-
-@font-face {
-    font-family: "Futura"; 
-    src:
-    url("../src/assets/fonts/Futura.ttc");
 }
