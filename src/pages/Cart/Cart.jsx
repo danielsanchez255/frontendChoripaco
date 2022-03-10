@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Header from '../../components/Header/Header.jsx';
 import { removeItem, addQuantity, subtractQuantity} from '../../services/actions/cart.js';
 
 const Cart = () => {
@@ -35,7 +36,7 @@ const Cart = () => {
                                     <p>{item.desc}</p>
                                     <p><b>Price: {item.price}$</b></p> 
                                     <p>
-                                        <b>Quantity: {item.stock}</b> 
+                                        <b>Quantity: {item.quantity}</b> 
                                     </p>
                                     <div className="add-remove">
                                         <Link to="/cart"><i className="material-icons" onClick={()=>{this.handleAddQuantity(item.id)}}>arrow_drop_up</i></Link>
@@ -54,14 +55,17 @@ const Cart = () => {
             <p>Nothing.</p>
             )
     return(
-        <div className="container">
-            <div className="cart">
-                <h5>You have ordered:</h5>
-                <ul className="collection">
-                    {addedItems}
-                </ul>
-            </div>        
-        </div>
+        <>
+            <Header />
+            <div className="container">
+                <div className="cart">
+                    <h5>You have ordered:</h5>
+                    <ul className="collection">
+                        {addedItems}
+                    </ul>
+                </div>        
+            </div>
+        </>
     )
 }
 
