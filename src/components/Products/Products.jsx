@@ -6,7 +6,7 @@ import './Products.css';
 const Products = ({ administrator, setCurrentId }) => {
     const products = useSelector((state) => state.products);
     return (
-        !products.length ? <div className="d-flex justify-content-center">
+        !products.length ? <div style={{ height: '35vw' }} className="d-flex align-items-center justify-content-center">
                                 <div className="spinner-border" role="status">
                                 <span className="sr-only">Loading...</span>
                                 </div>

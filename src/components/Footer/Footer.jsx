@@ -38,14 +38,11 @@ class Footer extends Component {
                                 <h6 className="mb-0">¡Conéctate con nosotros en redes sociales!</h6>
                             </div>
                             <div className="col-md-6 col-lg-7 text-center text-md-right">
-                                <a className="fb-ic">
-                                    <i className="fa fa-facebook white-text mr-4"> </i>
+                                <a href="https://www.facebook.com/Choripaco/" className="fb-ic">
+                                    <i className="fa fa-facebook white-text mr-4"></i>
                                 </a>
-                                <a className="tw-ic">
-                                    <i className="fa fa-twitter white-text mr-4"> </i>
-                                </a>
-                                <a className="ins-ic">
-                                    <i className="fa fa-instagram white-text"> </i>
+                                <a href="https://www.instagram.com/choripaco/?hl=es-la" className="ins-ic">
+                                    <i className="fa fa-instagram white-text"></i>
                                 </a>
                             </div>
                         </div>

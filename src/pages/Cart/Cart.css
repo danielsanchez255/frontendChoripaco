@@ -1,0 +1,12 @@
+.collection {
+
+}
+
+.collection .collection-item {
+    list-style-type: none;
+    border-bottom: 1px solid #000;
+}
+
+.item-img img {
+    width: 30%;
+}

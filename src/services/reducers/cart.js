@@ -4,29 +4,29 @@ const initState = {
     total: 0
 }
 
-const cart = (state = initState, action)=>{
-    //state.items = products;
+const cart = (state = initState, action)=> {
    
     //INSIDE HOME COMPONENT
     if (action.type === 'ADD_TO_CART'){
         let addedItem = action;
         //check if the action id exists in the addedItems
-        let existed_item = state.addedItems.find(item=> action.id === item.id)
-        if (existed_item) {
+        let existed_item = state.addedItems.find(item => action._id === item.id);
+        if (existed_item == 1) {
             addedItem.stock += 1 
-            console.log("added: ", state.addedItems);
+            console.log("Ya existe");
              return {
                 ...state,
                 total: state.total + addedItem.price 
             }
         } else {
-            addedItem.stock = 1;
+            //addedItem.stock = 1;
             //calculating the total
-            let newTotal = state.total + addedItem.price 
-            
+            let newTotal = state.total + addedItem.price;
+            state.addedItems.push(action);
+            console.log("Added items: ", state.addedItems);
             return{
                 ...state,
-                addedItems: [...state.addedItems, addedItem],
+                //addedItems: [...state.addedItems, addedItem],
                 total : newTotal
             }
         }

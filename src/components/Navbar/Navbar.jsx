@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import cart from '../../assets/img/logo_cesta.png'
 import "./Navbar.css";
 
 const Navbar = () => {
+    const items = useSelector((state) => state.cart.addedItems);
+
     const buttonChangePosition = (e) => {
         e.preventDefault();
         /* const nav = document.getElementById('navbar').getBoundingClientRect(); */
@@ -11,12 +14,15 @@ const Navbar = () => {
         if (navPosition == 'relative') {
             document.getElementById("navbar").style.position = "fixed";
             document.getElementById("navbar").style.top = "0px";
-            document.getElementById("link-cart").style.display = "none";
             document.getElementById("navbar").style.height = "40px";
+            document.getElementById("link-cart").style.display = "none";
+            document.getElementById("linkCartImage").style.display = "none";
         } else if (navPosition == 'fixed') {
             document.getElementById("navbar").style.position = "relative";
             document.getElementById("navbar").style.top = "0px";
             document.getElementById("link-cart").style.display = "initial";
+            document.getElementById("linkCartImage").style.display = "initial";
+            document.getElementById("linkCartImage").style.top = "0px";
         }
     }
 
@@ -36,12 +42,14 @@ const Navbar = () => {
                             <span></span>
                         </div>
                     </button>
-                    
-                    <a href="/tienda" className="navbar-brand link-cart" id="link-cart">
-                        Tienda 
-                        <img className="linkCartImage" src={cart} alt="cart" srcSet={cart} onClick={()=> navigate('/carrito')} />
-                        {/* <span className="badge badge-pill badge-light badge-navbar">4</span> */}
-                    </a>
+                    <div>
+                        <a href="/tienda" className="navbar-brand link-cart" id="link-cart">
+                            Tienda 
+                            {/* <span className="badge badge-pill badge-light badge-navbar">4</span> */}
+                        </a>
+                        <img id="linkCartImage" className="linkCartImage" src={cart} alt="cart" srcSet={cart} onClick={()=> navigate('/carrito')} />
+                        <span className="counter">{ items.length }</span>
+                    </div>
                 </div>
             </div>
 

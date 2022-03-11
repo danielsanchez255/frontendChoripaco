@@ -82,6 +82,7 @@
     font-size: 40px;
     padding: 0;
     margin-top: 40px;
+    height: 24vh;
 }
 
 .navbar-collapse.show {
@@ -214,20 +215,46 @@
     font-family: 'Lyons';
 }
 
+.link-cart:hover {
+    color: #faf8e3;
+}
+
 /* .link-cart:hover {
     background-color: #fff;
     color: #442a0b;
 } */
 
-.link-cart .linkCartImage {
-    margin-top: -14px;
+.linkCartImage {
+    margin-top: -10px;
+    margin-left: -12px;
     width: 60px;
     position: absolute;
+    cursor: pointer;
+}
+
+.counter {
+    position: relative;
+    right: -26px;
+    top: -16px;
+    color: #432b13;
+    background-color: #faf8e3;
+    padding: 1px 5px;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 50rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
 }
 
 /* Responsive Breakpoints */
 /* Extra small devices */
 @media only screen and (max-width: 600px) {
+    .counter {
+        right: 5px;
+        top: -15px;
+    }
+
     .navbar-toggler {
         margin-left: 12px;
     }
@@ -235,11 +262,16 @@
     .link-cart {
         margin-right: 65px;
     }
+
+    .linkCartImage {
+        position: absolute;
+        right: 5px;
+    }
 }
   
 /* Small devices */
 @media screen and (max-width: 767px) and (min-width: 600px) {
-    
+
 }
   
 /* Medium devices */
