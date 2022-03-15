@@ -14,6 +14,7 @@ const Cart = () => {
 
     const dispatch = useDispatch();
     const items = useSelector((state) => state.cart.addedItems);
+    const itemsTotal = useSelector((state) => state.cart.total);
 
     console.log("Items: ", items);
 
@@ -24,41 +25,76 @@ const Cart = () => {
     }
     //to add the quantity
     const handleAddQuantity = (id)=>{
-        addQuantity(id);
+        dispatch(addQuantity(id));
     }
     //to substruct from the quantity
     const handleSubtractQuantity = (id)=>{
-        subtractQuantity(id);
+        dispatch(subtractQuantity(id));
     }
+
+    let payingTotalItems = 
+    <div className="fixedTotal">
+        <div className="container">
+            <div className="row text-center">
+                <div className="col-4 justify-content-center">
+                    <h3 style={{ marginTop: '5px' }}>Total</h3>
+                </div>
+                <div className="col-4 justify-content-center">
+                    <h3 style={{ marginTop: '5px' }}>${ itemsTotal }</h3>
+                </div>
+                <div className="col-4 justify-content-center">
+                    <button className="btn btn-total">
+                        <b>Pagar</b>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+    
               
     let addedItems = items.length ?
     (  
         items.map((item)=>{
             return (
-                <li className="collection-item" key={item.product._id}>
-                    <div className="item-img">
-                        <img src={item.product.imageProduct} alt={item.product.imageProduct} />
+                <li className="collection-item" key={ item.product._id }>
+                    <div className="row">
+                        <div className="col-3">
+                            <div className="item-img">
+                                <img src={ item.product.imageProduct } alt={ item.product.imageProduct } />
+                                <p className="quantity">
+                                    <b>{ item.product.quantity }</b> 
+                                </p> 
+                            </div>
+                        </div>
+                        <div className="col-4 offset-md-1">
+                            <div className="item-description">
+                                <span className="title">{ item.product.name }</span>
+                                <p>{ item.description }</p>                           
+                            </div>
+                        </div>
+                        <div className="col-2">
+                            <div className="add-remove">
+                                <Link to="/carrito"><i className="fa fa-arrow-up" aria-hidden="true" onClick={()=>handleAddQuantity(item.id)}></i></Link>
+                                <Link to="/carrito"><i className="fa fa-arrow-down" aria-hidden="true" onClick={()=>handleSubtractQuantity(item.id)}></i></Link>
+                            </div>
+                        </div>
+                        <div className="col-2">
+                            <button className="btn btn-remove" onClick={() => handleRemove(item._id)}><i className="fa fa-times" aria-hidden="true"></i></button>
+                            <p>
+                                ${ item.product.price }
+                            </p> 
+                            <p className="price">
+                                ${ item.product.price * item.product.quantity }
+                            </p> 
+                        </div>
                     </div>
-                
-                    <div className="item-desc">
-                        <span className="title">{item.product.name}</span>
-                        <p>{item.description}</p>
-                        <p><b>Precio: {item.product.price}$</b></p> 
-                        <p>
-                            <b>Cantidad: {item.product.quantity}</b> 
-                        </p>                            
-                    </div>
-                    <div className="add-remove">
-                        <Link to="/carrito"><i className="fa fa-arrow-up" aria-hidden="true" onClick={()=>handleAddQuantity(item.id)}></i></Link>
-                        <Link to="/carrito"><i className="fa fa-arrow-down" aria-hidden="true" onClick={()=>handleSubtractQuantity(item.id)}></i></Link>
-                    </div>
-                    <button className="btn" onClick={() => handleRemove(item._id)}>Remove</button>
                 </li>
             )
         })
     ):
     (
-        <p>No hay productos en el carrito.</p>
+        <p className="ml-4">No hay productos en el carrito.</p>
     )
 
     return(
@@ -67,12 +103,13 @@ const Cart = () => {
             <div style={{ position: 'relative', marginTop: '12.3rem', backgroundColor: '#fff' }}>
                 <div className="container">
                     <div className="cart">
-                        <h5>Productos en el carrito:</h5>
+                        <h5 className="pt-4">Productos en el carrito:</h5>
                         <ul className="collection">
                             {addedItems}
                         </ul>
                     </div>        
                 </div>
+                {payingTotalItems}
             </div>
 
         </>

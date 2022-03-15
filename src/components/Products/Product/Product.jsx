@@ -30,7 +30,7 @@ const Product = ({ administrator, product, setCurrentId }) => {
             {!administrator ? 
                 <div className="card-img-overlay">
                     <h5 className="card-title text-white text-center" style={{ textShadow: '2px 2px 3px #333' }}>{ product.name }</h5>
-                    <button to="/" className="plus-button" onClick={() => handleClick(product)}><i className="fa fa-plus" aria-hidden="true"></i></button>
+                    <button className="plus-button" onClick={() => handleClick(product)}><i className="fa fa-plus" aria-hidden="true"></i></button>
                 </div>
             :
             <div className="card-body">

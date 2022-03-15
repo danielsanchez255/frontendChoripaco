@@ -18,12 +18,14 @@ const Navbar = () => {
             document.getElementById("navbar").style.height = "40px";
             document.getElementById("link-cart").style.display = "none";
             document.getElementById("linkCartImage").style.display = "none";
+            document.getElementById("counter").style.display = "none";
         } else if (navPosition == 'fixed') {
             document.getElementById("navbar").style.position = "relative";
             document.getElementById("navbar").style.top = "0px";
             document.getElementById("link-cart").style.display = "initial";
             document.getElementById("linkCartImage").style.display = "initial";
             document.getElementById("linkCartImage").style.top = "0px";
+            document.getElementById("counter").style.display = "initial";
         }
     }
 
@@ -49,7 +51,7 @@ const Navbar = () => {
                             {/* <span className="badge badge-pill badge-light badge-navbar">4</span> */}
                         </a>
                         <img id="linkCartImage" className="linkCartImage" src={cart} alt="cart" srcSet={cart} onClick={()=> navigate('/carrito')} />
-                        <span className="counter">{ items.length }</span>
+                        <span id="counter" className="counter">{ items.length }</span>
                     </div>
                 </div>
             </div>

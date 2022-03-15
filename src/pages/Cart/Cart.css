@@ -3,25 +3,73 @@
 }
 
 .collection {
-    margin-top: 30px;
+    margin: 30px 0 0 0;
+    padding: 0;
 }
 
 .collection .collection-item {
     list-style-type: none;
     border-bottom: 1px solid #000;
-    display: inline-flex;
     padding: 5vw 0px 2vw 0px;
     width: 100%;
-}
-
-.collection .collection-item .item-img {
-    
 }
 
 .collection .collection-item .item-img img {
     width: 20vw;
 }
 
-.collection .collection-item .item-desc {
-    display: inline-block;
+.collection .collection-item .item-description {
+    font-weight: bold;
+}
+
+.collection .collection-item .price {
+    position: absolute;
+    bottom: -24px;
+    right: 0;
+    color: #212529;
+    font-weight: bold;
+    font-size: 5vw;
+    padding: 10px 10px 10px 5vw;
+    border-top: 1px solid #212529;
+    border-left: 1px solid #212529;
+    border-right: 1px solid #212529;
+}
+
+.collection .collection-item .btn-remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: .9rem;
+}
+
+.quantity {
+    position: absolute;
+    left: 5px;
+    top: -10px;
+    color: #432b13;
+    background-color: #faf8e3;
+    padding: 1.8px 10px 1px 12px;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border: 1px solid #432b13;
+    border-radius: 50rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.fixedTotal {
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid #212529;
+    padding: 10px 0px 8px 0px;
+}
+
+.fixedTotal .btn-total{
+    background-color: #f04e39;
+    color: #fff;
+    margin: 0;
+    font-size: 18px;
 }
