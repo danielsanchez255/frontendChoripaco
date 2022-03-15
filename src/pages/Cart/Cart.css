@@ -1,12 +1,27 @@
-.collection {
+.cart {
+    padding: 10px 0;
+}
 
+.collection {
+    margin-top: 30px;
 }
 
 .collection .collection-item {
     list-style-type: none;
     border-bottom: 1px solid #000;
+    display: inline-flex;
+    padding: 5vw 0px 2vw 0px;
+    width: 100%;
 }
 
-.item-img img {
-    width: 30%;
+.collection .collection-item .item-img {
+    
+}
+
+.collection .collection-item .item-img img {
+    width: 20vw;
+}
+
+.collection .collection-item .item-desc {
+    display: inline-block;
 }

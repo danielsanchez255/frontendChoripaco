@@ -2,6 +2,16 @@ import axios from 'axios';
 
 const API = axios.create({ baseURL: 'http://localhost:5000' });
 
+API.interceptors.request.use((req) => {
+    
+    if (localStorage.getItem('profile')) {
+        //console.log("Req: ", JSON.parse(localStorage.getItem('profile')).token);
+        req.headers.authorization = `Bearer ${ JSON.parse(localStorage.getItem('profile')).token }`;
+    }
+
+    return req;
+});
+
 export const signIn = (formData) => API.post('users/signin', formData);
 
 const urlForProducts = '/products';

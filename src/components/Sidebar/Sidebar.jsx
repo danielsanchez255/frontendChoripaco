@@ -17,7 +17,7 @@ const Sidebar = () => {
 
     useEffect(() => {
         const token = user?.token;
-        console.log("Location: ", location);
+        //console.log("Location: ", location);
         if (token != undefined || token != null) {
             if (token) {
                 const decodedToken = decode(token);

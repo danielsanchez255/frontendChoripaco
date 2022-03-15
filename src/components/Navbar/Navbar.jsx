@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import cart from '../../assets/img/logo_cesta.png'
 import "./Navbar.css";
 
 const Navbar = () => {
+    
     const items = useSelector((state) => state.cart.addedItems);
 
     const buttonChangePosition = (e) => {

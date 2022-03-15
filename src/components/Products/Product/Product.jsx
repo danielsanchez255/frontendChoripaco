@@ -52,7 +52,7 @@ const Product = ({ administrator, product, setCurrentId }) => {
 
 const mapStateToProps = (state)=>{
     return {
-      items: state.items
+        addedItems: state.cart.addedItems
     }
 }
 

@@ -1,6 +1,6 @@
 .layoutProducts {
     overflow-y: scroll; 
-    height: 40vw;
+    padding: 20px 0px;
 }
 
 /* Responsive Breakpoints */
@@ -16,7 +16,7 @@
 @media screen and (max-width: 767px) and (min-width: 600px) {
     .layoutProducts {
         overflow-y: scroll; 
-        height: 180vw;
+        padding: 20px 0px;
     }
 }
   
