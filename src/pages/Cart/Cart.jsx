@@ -2,8 +2,6 @@ import React from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import background from '../../assets/img/cafe.png';
-
 //Components
 import Header from '../../components/Header/Header.jsx';
 import { removeItem, addQuantity, subtractQuantity} from '../../services/actions/cart.js';

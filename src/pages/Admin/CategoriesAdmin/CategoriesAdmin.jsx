@@ -9,6 +9,8 @@ import Sidebar from '../../../components/Sidebar/Sidebar.jsx';
 import { getCategories, deleteCategory } from '../../../services/actions/categories.js';
 import { useDispatch, useSelector } from 'react-redux';
 
+import loader from '../../../assets/img/loader.gif';
+
 const CategoriesAdmin = () =>  {
 
     const categories = useSelector((state) => state.categories);
@@ -28,9 +30,7 @@ const CategoriesAdmin = () =>  {
                         <ul className="list-group">
                             {
                                 !categories.length ? <div className="d-flex justify-content-center">
-                                                        <div className="spinner-border" role="status">
-                                                        <span className="sr-only">Loading...</span>
-                                                        </div>
+                                                        <img src={loader} srcSet={loader} width="70%" />
                                                     </div>  : (
                                     <div className="layoutProducts">
                                         {categories.map((category) => (

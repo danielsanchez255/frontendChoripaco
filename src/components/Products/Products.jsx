@@ -1,15 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Product from './Product/Product.jsx';
+import loader from '../../assets/img/loader.gif';
 import './Products.css';
 
 const Products = ({ administrator, setCurrentId }) => {
     const products = useSelector((state) => state.products);
     return (
-        !products.length ? <div style={{ height: '35vw' }} className="d-flex align-items-center justify-content-center">
-                                <div className="spinner-border" role="status">
-                                <span className="sr-only">Loading...</span>
-                                </div>
+        !products.length ?  <div style={{ height: '35vw' }} className="d-flex align-items-center justify-content-center">
+                                <img src={loader} srcSet={loader} width="70%" />
                             </div> 
                         : (
                             <div className="layoutProducts">
