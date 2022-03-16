@@ -50,7 +50,7 @@ const Navbar = () => {
                             Tienda 
                             {/* <span className="badge badge-pill badge-light badge-navbar">4</span> */}
                         </a>
-                        <img id="linkCartImage" className="linkCartImage" src={cart} alt="cart" srcSet={cart} onClick={()=> navigate('/carrito')} />
+                        <img id="linkCartImage" className="linkCartImage" src={ cart } srcSet={ cart } alt="cart" onClick={()=> navigate('/carrito')} />
                         <span id="counter" className="counter">{ items.length }</span>
                     </div>
                 </div>

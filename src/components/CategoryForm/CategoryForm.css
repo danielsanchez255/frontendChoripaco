@@ -13,23 +13,3 @@
 .form-field:focus {
     border-color: #0f7ef1;
 }
-
-input[type="file"] {
-    cursor: pointer;
-	width: 130px;
-    height: 42px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: 9999;
-    
-}
-
-input[type="file"] + label {
-    padding: 5px;
-    font-size: 1.25em;
-    font-weight: 700;
-    color: white;
-    background-color: #ac3026;
-    display: inline-block;
-}

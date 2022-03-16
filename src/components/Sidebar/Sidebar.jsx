@@ -43,7 +43,7 @@ const Sidebar = () => {
             <div className="wrapper">
                 <nav id="sidebar">
                     <div className="sidebar-header">
-                        <img className="headerImage" src={logo} alt="logo" />
+                        <img className="headerImage" src={ logo } srcSet={ logo } alt="logo" />
                     </div>
 
                     <ul className="list-unstyled components">
@@ -52,10 +52,10 @@ const Sidebar = () => {
                             <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Productos</a>
                             <ul className="collapse list-unstyled" id="homeSubmenu">
                                 <li className="active">
-                                    <a href="#">Producto</a>
+                                    <a href="/administrador/productos">Producto</a>
                                 </li>
                                 <li>
-                                    <a href="#">Categoría</a>
+                                    <a href="/administrador/categorias">Categoría</a>
                                 </li>
                             </ul>
                         </li>

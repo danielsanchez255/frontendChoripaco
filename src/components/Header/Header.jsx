@@ -11,7 +11,7 @@ class Header extends Component {
             <header className="headerChoripaco">
                 <div className="headerShadowChoripaco">
                     <a href="/">
-                        <img className="headerImage" src={logo} alt="logo" />
+                        <img className="headerImage" src={ logo } srcSet={ logo } alt="logo" />
                     </a>
                     <Navbar />
                 </div>

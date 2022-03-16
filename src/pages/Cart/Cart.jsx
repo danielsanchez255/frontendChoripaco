@@ -59,7 +59,7 @@ const Cart = () => {
                     <div className="row">
                         <div className="col-3">
                             <div className="item-img">
-                                <img src={ item.product.imageProduct } alt={ item.product.imageProduct } />
+                                <img src={ item.product.imageProduct } srcSet={ item.product.imageProduct } alt={ item.product.name } />
                                 <p className="quantity">
                                     <b>{ item.product.quantity }</b> 
                                 </p> 
@@ -68,13 +68,13 @@ const Cart = () => {
                         <div className="col-4 offset-md-1">
                             <div className="item-description">
                                 <span className="title">{ item.product.name }</span>
-                                <p>{ item.description }</p>                           
+                                <p>{ item.product.description }</p>                           
                             </div>
                         </div>
                         <div className="col-2">
                             <div className="add-remove">
-                                <Link to="/carrito"><i className="fa fa-arrow-up" aria-hidden="true" onClick={()=>handleAddQuantity(item.id)}></i></Link>
-                                <Link to="/carrito"><i className="fa fa-arrow-down" aria-hidden="true" onClick={()=>handleSubtractQuantity(item.id)}></i></Link>
+                                <Link to="/carrito"><i className="fa fa-arrow-up" aria-hidden="true" onClick={() => handleAddQuantity(item._id)}></i></Link>
+                                <Link to="/carrito"><i className="fa fa-arrow-down" aria-hidden="true" onClick={() => handleSubtractQuantity(item._id)}></i></Link>
                             </div>
                         </div>
                         <div className="col-2">
@@ -99,7 +99,7 @@ const Cart = () => {
         <>
             <Header />
             <div style={{ position: 'relative', marginTop: '12.3rem', backgroundColor: '#fff' }}>
-                <div className="container">
+                <div className="container mb-5">
                     <div className="cart">
                         <h5 className="pt-4">Productos en el carrito:</h5>
                         <ul className="collection">

@@ -16,15 +16,14 @@ const cart = (state = initState, action)=> {
             console.log("Ya existe");
              return {
                 ...state,
-                total: state.total + addedItem.price 
+                total: state.total + addedItem.product.price 
             }
         } else {
             //addedItem.stock = 1;
             //calculating the total
-            let newTotal = state.total + addedItem.price;
+            let newTotal = state.total + addedItem.product.price;
             addedItem.product.quantity = 1;
             state.addedItems.push(action);
-            //console.log("Added items: ", state.addedItems);
             return{
                 ...state,
                 //addedItems: [...state.addedItems, addedItem],
@@ -49,9 +48,10 @@ const cart = (state = initState, action)=> {
 
     //INSIDE CART COMPONENT
     if (action.type=== 'ADD_QUANTITY') {
-        let addedItem = state.items.find(item => item.id === action.id);
+        console.log("Add Quantity")
+        let addedItem = state.addedItems.find(item => item.id === action.id);
         addedItem.product.quantity += 1;
-        let newTotal = state.total + addedItem.price;
+        let newTotal = state.total + addedItem.product.price;
         return {
             ...state,
             total: newTotal
@@ -59,12 +59,12 @@ const cart = (state = initState, action)=> {
     }
 
     if (action.type === 'SUB_QUANTITY') {  
-        let addedItem = state.items.find(item => item.id === action.id);
+        let addedItem = state.addedItems.find(item => item.id === action.id);
         //if the qt == 0 then it should be removed
         console.log("Sub Quantity")
         if (addedItem.product.quantity === 1) {
             let new_items = state.addedItems.filter(item=>item.id !== action.id)
-            let newTotal = state.total - addedItem.price
+            let newTotal = state.total - addedItem.product.price
             return {
                 ...state,
                 addedItems: new_items,
@@ -72,7 +72,7 @@ const cart = (state = initState, action)=> {
             }
         } else {
             addedItem.stock -= 1;
-            let newTotal = state.total - addedItem.price;
+            let newTotal = state.total - addedItem.product.price;
             return {
                 ...state,
                 total: newTotal

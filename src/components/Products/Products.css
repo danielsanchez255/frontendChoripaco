@@ -3,6 +3,20 @@
     padding: 20px 0px;
 }
 
+.loaderContainer {
+    background-color: rgba(20, 30, 28, .6);
+    border-radius: 50rem;
+    position: absolute;
+    text-align: center;
+    width: 31vw;
+    height: 31vw;
+    z-index: 2;
+}
+
+.loaderImg {
+    z-index: 22;
+}
+
 /* Responsive Breakpoints */
 /* Extra small devices */
 @media only screen and (max-width: 600px) {

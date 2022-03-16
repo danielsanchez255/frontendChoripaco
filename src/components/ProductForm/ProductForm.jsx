@@ -18,7 +18,7 @@ const ProductForm = ({ currentId, setCurrentId }) => {
 
     const clear = () => {
         setCurrentId(null);
-        setPostData({ name: '', stock: '', price: '', category: '', imageProduct: '' });
+        setPostData({ name: '', stock: '', price: '', category: '', imageProduct: '', description: '' });
     }
 
     useEffect(() => {
@@ -53,27 +53,33 @@ const ProductForm = ({ currentId, setCurrentId }) => {
                     />
                     <small id="nameHelp" className="form-text text-muted">No se ha ingresado el nombre.</small>
                 </div>
-                <div className="form-group">
-                    <input 
-                        type="number" 
-                        className="form-field" 
-                        aria-describedby="stockHelp" 
-                        placeholder="Cantidad del producto"
-                        value={postData.stock} 
-                        onChange={(e) => setPostData({ ...postData ,stock: e.target.value })} 
-                    />
-                    <small id="stockHelp" className="form-text text-muted">No se ha ingresado el stock.</small>
-                </div>
-                <div className="form-group">
-                    <input 
-                        type="number" 
-                        className="form-field" 
-                        aria-describedby="priceHelp" 
-                        placeholder="Precio del producto"
-                        value={postData.price} 
-                        onChange={(e) => setPostData({ ...postData ,price: e.target.value })} 
-                    />
-                    <small id="priceHelp" className="form-text text-muted">No se ha ingresado el precio.</small>
+                <div className="row">
+                    <div className="col-md-6">
+                        <div className="form-group">
+                            <input 
+                                type="number" 
+                                className="form-field" 
+                                aria-describedby="stockHelp" 
+                                placeholder="Cantidad del producto"
+                                value={postData.stock} 
+                                onChange={(e) => setPostData({ ...postData ,stock: e.target.value })} 
+                            />
+                            <small id="stockHelp" className="form-text text-muted">Stock no válido.</small>
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="form-group">
+                            <input 
+                                type="number" 
+                                className="form-field" 
+                                aria-describedby="priceHelp" 
+                                placeholder="Precio del producto"
+                                value={postData.price} 
+                                onChange={(e) => setPostData({ ...postData ,price: e.target.value })} 
+                            />
+                            <small id="priceHelp" className="form-text text-muted">Precio no válido.</small>
+                        </div>
+                    </div>
                 </div>
                 <div className="form-group">
                     <select 
@@ -95,12 +101,21 @@ const ProductForm = ({ currentId, setCurrentId }) => {
                     </select>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="exampleFormControlFile1">Example file input</label>
-                    <br />
-                    <Filebase id="inputfile" type="file" multiple={false} onDone={({base64}) => setPostData({ ...postData ,imageProduct: base64 })} />
-                    <label htmlFor="file">Choose a file</label>
+                    <textarea 
+                        className="form-field-area" 
+                        placeholder="Ingresa la descripción del producto" 
+                        rows="3"
+                        value={postData.description} 
+                        onChange={(e) => setPostData({ ...postData ,description: e.target.value })}
+                    ></textarea>
                 </div>
-                <button type="submit" className="btn btn-primary">Crear</button>
+                <div className="form-group">
+                    <div class="custom-file">
+                        <Filebase id="inputfile" type="file" multiple={false} onDone={({base64}) => setPostData({ ...postData ,imageProduct: base64 })} />
+                        <label class="custom-file-label" for="inputGroupFile01">Elegir archivo</label>
+                    </div>
+                </div>
+                <button type="submit" className="btn btn-product mb-2">Crear</button>
             </form>
         </>
     );

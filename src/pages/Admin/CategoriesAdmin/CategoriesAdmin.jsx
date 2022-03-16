@@ -30,7 +30,9 @@ const CategoriesAdmin = () =>  {
                         <ul className="list-group">
                             {
                                 !categories.length ? <div className="d-flex justify-content-center">
-                                                        <img src={loader} srcSet={loader} width="70%" />
+                                                        <div className="loaderContainer">
+                                                            <img src={ loader } srcSet={ loader } width="70%" alt="loader" />
+                                                        </div>  
                                                     </div>  : (
                                     <div className="layoutProducts">
                                         {categories.map((category) => (
