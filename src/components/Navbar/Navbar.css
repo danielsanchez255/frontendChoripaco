@@ -78,10 +78,11 @@
 }
 
 .navbar-collapse ul.navbar-nav li a {
+    cursor: pointer;
     color: white;
     font-size: 40px;
     padding: 0;
-    margin-top: 40px;
+    padding-top: 40px;
     height: 24vh;
 }
 
@@ -213,6 +214,8 @@
 .link-cart {
     color: #fff;
     font-family: 'Lyons';
+    background-color: transparent;
+    border: transparent;
 }
 
 .link-cart:hover {

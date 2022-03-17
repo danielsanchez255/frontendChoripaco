@@ -14,7 +14,7 @@ const Cart = () => {
     const items = useSelector((state) => state.cart.addedItems);
     const itemsTotal = useSelector((state) => state.cart.total);
 
-    console.log("Items: ", items);
+    //console.log("Items: ", items);
 
     //to remove the item completely
     const handleRemove = (id)=>{
@@ -55,20 +55,20 @@ const Cart = () => {
     (  
         items.map((item)=>{
             return (
-                <li className="collection-item" key={ item.product._id }>
+                <li className="collection-item" key={ item._id }>
                     <div className="row">
                         <div className="col-3">
                             <div className="item-img">
-                                <img src={ item.product.imageProduct } srcSet={ item.product.imageProduct } alt={ item.product.name } />
+                                <img src={ item.imageProduct } srcSet={ item.imageProduct } alt={ item.name } />
                                 <p className="quantity">
-                                    <b>{ item.product.quantity }</b> 
+                                    <b>{ item.quantity }</b> 
                                 </p> 
                             </div>
                         </div>
                         <div className="col-4 offset-md-1">
                             <div className="item-description">
-                                <span className="title">{ item.product.name }</span>
-                                <p>{ item.product.description }</p>                           
+                                <span className="title">{ item.name }</span>
+                                <p>{ item.description }</p>                           
                             </div>
                         </div>
                         <div className="col-2">
@@ -80,10 +80,10 @@ const Cart = () => {
                         <div className="col-2">
                             <button className="btn btn-remove" onClick={() => handleRemove(item._id)}><i className="fa fa-times" aria-hidden="true"></i></button>
                             <p>
-                                ${ item.product.price }
+                                ${ item.price }
                             </p> 
                             <p className="price">
-                                ${ item.product.price * item.product.quantity }
+                                ${ item.price * item.quantity }
                             </p> 
                         </div>
                     </div>
@@ -107,9 +107,9 @@ const Cart = () => {
                         </ul>
                     </div>        
                 </div>
+                <div className="pt-4"></div>
                 {payingTotalItems}
             </div>
-
         </>
     )
 }

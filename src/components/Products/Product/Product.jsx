@@ -39,7 +39,7 @@ const Product = ({ administrator, product, setCurrentId }) => {
         });
     }
 
-    const handleClick = (product)=>{
+    const handleClick = (product) => {
         dispatch(addToCart(product)); 
     }
 
@@ -64,7 +64,7 @@ const Product = ({ administrator, product, setCurrentId }) => {
                         <br/>
                         <b>Creado { fromNowInSpanish(product.createdAt) }</b>
                     </p>
-                    <button href="" className="btn btn-secondary mt-1 mr-1" onClick={() => setCurrentId(product._id)}><i className="fa fa-pencil" aria-hidden="true"></i></button>
+                    <button className="btn btn-secondary mt-1 mr-1" onClick={() => setCurrentId(product._id)}><i className="fa fa-pencil" aria-hidden="true"></i></button>
                     <button className="btn btn-danger mt-1 mr-1" onClick={() => deleteClick(product._id)}><i className="fa fa-trash" aria-hidden="true"></i></button>
                 </div>
             }

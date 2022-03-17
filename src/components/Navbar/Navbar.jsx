@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import cart from '../../assets/img/logo_cesta.png'
+import cart from '../../assets/img/logo_cesta.png';
 import "./Navbar.css";
 
 const Navbar = () => {
     
-    const items = useSelector((state) => state.cart.addedItems);
+    const items = useSelector(state => state.cart.addedItems);
 
     const buttonChangePosition = (e) => {
         e.preventDefault();
@@ -46,9 +46,9 @@ const Navbar = () => {
                         </div>
                     </button>
                     <div>
-                        <a href="/tienda" className="navbar-brand link-cart" id="link-cart">
+                        <button className="navbar-brand link-cart" id="link-cart" onClick={()=> navigate('/tienda')}>
                             Tienda
-                        </a>
+                        </button>
                         <img id="linkCartImage" className="linkCartImage" src={ cart } srcSet={ cart } alt="cart" onClick={()=> navigate('/carrito')} />
                         <span id="counter" className="counter">{ items.length }</span>
                     </div>
@@ -59,16 +59,16 @@ const Navbar = () => {
                 <div id="navbarNavDropdown" className="navbar-collapse collapse text-center">
                     <ul id="main-menu" className="navbar-nav">
                         <li className="nav-item first">
-                            <a href="/tienda" className="nav-link">Tienda</a>
+                            <a className="nav-link" onClick={()=> navigate('/tienda')}>Tienda</a>
                         </li>
                         <li className="nav-item second">
-                            <a href="/conocenos" className="nav-link">Conocenos</a>
+                            <a className="nav-link" onClick={()=> navigate('/conocenos')}>Conocenos</a>
                         </li>
                         <li className="nav-item third">
-                            <a href="/encuentranos" className="nav-link">Encuentranos</a>
+                            <a className="nav-link" onClick={()=> navigate('/encuentranos')}>Encuentranos</a>
                         </li>
                         <li className="nav-item fourth">
-                            <a href="/contactanos" className="nav-link">Contactanos</a>
+                            <a className="nav-link" onClick={()=> navigate('/contactanos')}>Contactanos</a>
                         </li>
                     </ul>
                 </div>
