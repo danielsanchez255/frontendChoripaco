@@ -12,8 +12,8 @@
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
 
-.headerShadowChoripaco {
-    background-color: rgba(174, 42, 24, .5);
+.headerChoripaco a{
+    cursor: pointer;
 }
 
 .headerChoripaco .headerImage {

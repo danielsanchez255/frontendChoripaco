@@ -1,24 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/img/logo_crema.png';
 import Navbar from '../Navbar/Navbar.jsx'
 import "./Header.css";
 
-class Header extends Component {
+const Header = () => {
 
-  render() {
+    const navigate = useNavigate();
+
     return (
         <>
             <header className="headerChoripaco">
-                <div className="headerShadowChoripaco">
-                    <a href="/">
-                        <img className="headerImage" src={ logo } srcSet={ logo } alt="logo" />
-                    </a>
-                    <Navbar />
-                </div>
+                <a onClick={()=> navigate('/')}>
+                    <img className="headerImage" src={ logo } srcSet={ logo } alt="logo" />
+                </a>
+                <Navbar />
             </header>
         </>
     )
-  }
 }
 
 export default Header;

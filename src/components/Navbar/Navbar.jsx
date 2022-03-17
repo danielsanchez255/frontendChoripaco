@@ -5,6 +5,8 @@ import cart from '../../assets/img/logo_cesta.png';
 import "./Navbar.css";
 
 const Navbar = () => {
+
+    const navigate = useNavigate();
     
     const items = useSelector(state => state.cart.addedItems);
 
@@ -28,8 +30,6 @@ const Navbar = () => {
             document.getElementById("counter").style.display = "initial";
         }
     }
-
-    const navigate = useNavigate();
 
     return (
         <>
