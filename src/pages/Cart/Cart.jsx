@@ -79,10 +79,10 @@ const Cart = () => {
                         </div>
                         <div className="col-2">
                             <button className="btn btn-remove" onClick={() => handleRemove(item._id)}><i className="fa fa-times" aria-hidden="true"></i></button>
-                            <p>
+                            <p className="price">
                                 ${ item.price }
                             </p> 
-                            <p className="price">
+                            <p className="priceQuantity">
                                 ${ item.price * item.quantity }
                             </p> 
                         </div>
