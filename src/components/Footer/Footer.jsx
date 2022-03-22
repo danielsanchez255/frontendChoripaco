@@ -1,33 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/img/logo_crema.png';
 import Navbar from '../Navbar/Navbar.jsx'
 import "./Footer.css";
 
-class Footer extends Component {
+const Footer = () => {
 
-  componentDidMount() {
+    const navigate = useNavigate();
 
-    /* if (localStorage.getItem('user_token')) {
-
-      this.setState({
-        token: localStorage.getItem('user_token')
-      })
-      
-    } */
-
-  }
-
-  logout = () => {
-
-    /* this.setState({
-      token: ''
-    })
-    localStorage.removeItem('user_token')
-    window.location.href = "/login" */
-
-  }
-
-  render() {
     return (
         <>
             <footer className="page-footer font-small text-white" style={{ backgroundColor: 'rgba(68, 43, 13, .5)' }}>
@@ -62,16 +42,16 @@ class Footer extends Component {
                             <h6 className="text-uppercase font-weight-bold">Enlaces</h6>
                             <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: '60px' }} />
                             <p>
-                                <a href="/tienda">Tienda</a>
+                                <a className="footer-link" onClick={()=> navigate('/tienda')}>Tienda</a>
                             </p>
                             <p>
-                                <a href="/conocenos">Conocenos</a>
+                                <a className="footer-link" onClick={()=> navigate('/conocenos')}>Conocenos</a>
                             </p>
                             <p>
-                                <a href="/encuentranos">Encuentranos</a>
+                                <a className="footer-link" onClick={()=> navigate('/encuentranos')}>Encuentranos</a>
                             </p>
                             <p>
-                                <a href="/contactanos">Contactanos</a>
+                                <a className="footer-link" onClick={()=> navigate('/contactanos')}>Contactanos</a>
                             </p>
 
                         </div>
@@ -82,9 +62,11 @@ class Footer extends Component {
                                 <i className="fa fa-home mr-3"></i> Santa Rosa de Cabal, Risaralda - Colombia Choripaco Cl. 7 #4 - 45
                             </p>
                             <p>
-                            <i className="fa fa-envelope mr-3"></i> info@choripaco.com</p>
+                                <i className="fa fa-envelope mr-3"></i> info@choripaco.com
+                            </p>
                             <p>
-                            <i className="fa fa-phone mr-3"></i> + 01 234 567 88</p>
+                                <i className="fa fa-phone mr-3"></i> + 01 234 567 88
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -94,7 +76,6 @@ class Footer extends Component {
             </footer>
         </>
     )
-  }
 }
 
 export default Footer;

@@ -5,3 +5,7 @@ footer {
 hr {
     background-color: #ae2a18;
 }
+
+.footer-link {
+    cursor: pointer;
+}
