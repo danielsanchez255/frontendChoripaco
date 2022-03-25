@@ -1,5 +1,6 @@
 import React from 'react';
 import background from '../../assets/img/cafe.png';
+import Fade from 'react-reveal/Fade';
 import './FindUs.css';
 
 //Components
@@ -18,17 +19,19 @@ const FindUs = () =>  {
                             <div className="col-md-12 pt-5 pb-4">
                                 <div className="container p-3 pb-0">
                                     <div className="row">
-                                        <div className="col-6 col-md-2 offset-md-4 mt-2">
-                                            <a className="social-networks" style={{ padding: '3px 15px 1px 13px', color: '#583d27' }} href="https://www.facebook.com/Choripaco/" role="button">
-                                                <i className="fa fa-facebook"></i>
-                                            </a>
-                                            <a className="social-networks" style={{ padding: '3px 10px 1px 10px', color: '#583d27' }} href="https://www.instagram.com/choripaco/?hl=es-la" role="button">
-                                                <i className="fa fa-instagram"></i>
-                                            </a>
-                                        </div>
-                                        <div className="col-6 col-md-3">
-                                            <p className="follow-us-text text-left">Siguenos en <br/> nuestras redes</p>
-                                        </div>
+                                        <Fade left>
+                                            <div className="col-6 col-md-2 offset-md-4 mt-2">
+                                                <a className="social-networks" style={{ padding: '3px 15px 1px 13px', color: '#583d27' }} href="https://www.facebook.com/Choripaco/" role="button">
+                                                    <i className="fa fa-facebook"></i>
+                                                </a>
+                                                <a className="social-networks" style={{ padding: '3px 10px 1px 10px', color: '#583d27' }} href="https://www.instagram.com/choripaco/?hl=es-la" role="button">
+                                                    <i className="fa fa-instagram"></i>
+                                                </a>
+                                            </div>
+                                            <div className="col-6 col-md-3">
+                                                <p className="follow-us-text text-left">Siguenos en <br/> nuestras redes</p>
+                                            </div>
+                                        </Fade>
                                     </div>
                                 </div>
                             </div>

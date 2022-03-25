@@ -1,5 +1,6 @@
 import React from 'react';
 import background from '../../assets/img/cafe.png';
+import Zoom from 'react-reveal/Zoom';
 import './Contact.css';
 
 //Components
@@ -17,7 +18,9 @@ const Contact = () =>  {
                     <div className="container">
                         <div className="row">
                             <div className="col-md-6 offset-md-3 pt-5 pb-4">
-                                <ContactForm />
+                                <Zoom>
+                                    <ContactForm />
+                                </Zoom>
                             </div>
                         </div>
                     </div>

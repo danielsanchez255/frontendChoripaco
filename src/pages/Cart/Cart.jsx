@@ -2,6 +2,8 @@ import React from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import AWN from "awesome-notifications";
+
 //Components
 import Header from '../../components/Header/Header.jsx';
 import { removeItem, addQuantity, subtractQuantity} from '../../services/actions/cart.js';
@@ -14,18 +16,21 @@ const Cart = () => {
     const items = useSelector((state) => state.cart.addedItems);
     const itemsTotal = useSelector((state) => state.cart.total);
 
-    //console.log("Items: ", items);
+    let notifier = new AWN();
 
-    //to remove the item completely
     const handleRemove = (id)=>{
-        console.log("It works!");
+        notifier.alert('Producto removido al carrito', {
+            labels: {
+                alert: 'Excelente'
+            }
+        });
         dispatch(removeItem(id));
     }
-    //to add the quantity
+    
     const handleAddQuantity = (id)=>{
         dispatch(addQuantity(id));
     }
-    //to substruct from the quantity
+    
     const handleSubtractQuantity = (id)=>{
         dispatch(subtractQuantity(id));
     }
@@ -48,8 +53,6 @@ const Cart = () => {
             </div>
         </div>
     </div>
-            
-    
               
     let addedItems = items.length ?
     (  

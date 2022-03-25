@@ -1,10 +1,13 @@
 import React from 'react';
 import { connect, useDispatch } from 'react-redux';
+import Zoom from 'react-reveal/Zoom';
 
 import { deleteProduct } from '../../../services/actions/products.js';
 import { addToCart } from '../../../services/actions/cart.js';
 
 import Swal from "sweetalert2"; 
+
+import AWN from "awesome-notifications";
 
 import moment from 'moment';
 import 'moment/locale/es';
@@ -14,6 +17,8 @@ import './Product.css'
 const Product = ({ administrator, product, setCurrentId }) => {
 
     const dispatch = useDispatch();
+
+    let notifier = new AWN();
 
     const fromNowInSpanish = (date) => {
         moment.locale('es');
@@ -40,35 +45,46 @@ const Product = ({ administrator, product, setCurrentId }) => {
     }
 
     const handleClick = (product) => {
-        dispatch(addToCart(product)); 
+        notifier.success('Producto agregado al carrito', {
+            labels: {
+                success: 'Excelente',
+                confirmOK: 'Confirmar',
+                confirmCancel: 'Cancelar'
+            }
+        });
+        dispatch(addToCart(product));
     }
 
     return (
-        <div className="card mb-3" style={{ width: '100%' }}>
-            <img className="card-img-top" src={ product.imageProduct } srcSet={ product.imageProduct } alt={ product.name } />
-            {
-                !administrator ? 
-                    <div className="card-img-overlay">
-                        <h5 className="card-title text-white text-center" style={{ textShadow: '2px 2px 3px #333' }}>{ product.name }</h5>
-                        <button className="plus-button" onClick={() => handleClick(product)}><i className="fa fa-plus" aria-hidden="true"></i></button>
-                    </div>
-                :
-                <div className="card-body">
-                    <h5 className="card-title text-dark">{ product.name }</h5>
-                    <p className="card-text">
-                        <b>Precio: </b>${ product.price }
-                        <br/>
-                        <b>Categoría: </b> { product.category }
-                        <br/>
-                        <b>Descripción: </b> { product.description }
-                        <br/>
-                        <b>Creado { fromNowInSpanish(product.createdAt) }</b>
-                    </p>
-                    <button className="btn btn-secondary mt-1 mr-1" onClick={() => setCurrentId(product._id)}><i className="fa fa-pencil" aria-hidden="true"></i></button>
-                    <button className="btn btn-danger mt-1 mr-1" onClick={() => deleteClick(product._id)}><i className="fa fa-trash" aria-hidden="true"></i></button>
+        <>
+            <Zoom>
+                <div className="card mb-3" style={{ width: '100%' }}>
+                    <img className="card-img-top" src={ product.imageProduct } srcSet={ product.imageProduct } alt={ product.name } />
+                    {
+                        !administrator ? 
+                            <div className="card-img-overlay">
+                                <h5 className="card-title text-white text-center" style={{ textShadow: '2px 2px 3px #333' }}>{ product.name }</h5>
+                                <button className="plus-button" onClick={() => handleClick(product)}><i className="fa fa-plus" aria-hidden="true"></i></button>
+                            </div>
+                        :
+                        <div className="card-body">
+                            <h5 className="card-title text-dark">{ product.name }</h5>
+                            <p className="card-text">
+                                <b>Precio: </b>${ product.price }
+                                <br/>
+                                <b>Categoría: </b> { product.category }
+                                <br/>
+                                <b>Descripción: </b> { product.description }
+                                <br/>
+                                <b>Creado { fromNowInSpanish(product.createdAt) }</b>
+                            </p>
+                            <button className="btn btn-secondary mt-1 mr-1" onClick={() => setCurrentId(product._id)}><i className="fa fa-pencil" aria-hidden="true"></i></button>
+                            <button className="btn btn-danger mt-1 mr-1" onClick={() => deleteClick(product._id)}><i className="fa fa-trash" aria-hidden="true"></i></button>
+                        </div>
+                    }
                 </div>
-            }
-        </div>
+            </Zoom>
+        </>
     );
 }
 

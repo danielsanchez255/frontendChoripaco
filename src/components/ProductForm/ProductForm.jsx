@@ -60,11 +60,19 @@ const ProductForm = ({ currentId, setCurrentId }) => {
                                 type="number" 
                                 className="form-field" 
                                 aria-describedby="stockHelp" 
-                                placeholder="Cantidad del producto"
+                                placeholder="Cantidad"
                                 value={postData.stock} 
                                 onChange={(e) => setPostData({ ...postData ,stock: e.target.value })} 
                             />
-                            <small id="stockHelp" className="form-text text-muted">Stock no válido.</small>
+                            {
+                                postData.stock === '' ? 
+                                    <small id="stockHelp" className="form-text text-muted">Stock no válido.</small>
+                                :
+                                (
+                                    <div></div>
+                                )
+                            }
+                            
                         </div>
                     </div>
                     <div className="col-md-6">

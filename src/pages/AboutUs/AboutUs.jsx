@@ -35,7 +35,7 @@ const AboutUs = () =>  {
                                 </Fade>
                             </div>
                             <div className="col-md-6">
-                                <Fade left>
+                                <Fade right>
                                     <div className="card mb-4">
                                         <div className="card-body">
                                             <h2 className="card-title text-choripaco">Vision</h2>
@@ -73,7 +73,7 @@ const AboutUs = () =>  {
                                 </Fade>
                             </div>
                             <div className="col-md-6">
-                                <Fade left>
+                                <Fade right>
                                     <div className="card mb-4">
                                         <div className="card-body">
                                             <h2 className="card-title text-choripaco">Restaurante</h2>
