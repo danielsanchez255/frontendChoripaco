@@ -22,3 +22,13 @@
     height: 35px;
     font-size: 22px;
 }
+
+.btn-edit {
+    background-color: #f04e39;
+    color: #faf8e3;
+}
+
+.btn-remove {
+    background-color: #181e1c;
+    color: #faf8e3;
+}

@@ -1,9 +1,12 @@
-import React from 'react';
-import { connect, useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import Zoom from 'react-reveal/Zoom';
 
 import { deleteProduct } from '../../../services/actions/products.js';
 import { addToCart } from '../../../services/actions/cart.js';
+
+//Redux
+import { getCategories } from '../../../services/actions/categories.js';
 
 import Swal from "sweetalert2"; 
 
@@ -16,7 +19,13 @@ import './Product.css'
 
 const Product = ({ administrator, product, setCurrentId }) => {
 
+    const categories = useSelector((state) => state.categories);
+
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getCategories());
+    }, [])
 
     let notifier = new AWN();
 
@@ -25,6 +34,10 @@ const Product = ({ administrator, product, setCurrentId }) => {
         //const momentInSpanish = moment(date).format('LLL');
         const momentInSpanish = moment(date).fromNow();
         return momentInSpanish;
+    }
+
+    const categoryName = (category) => {
+        return categories.find(item => item.id === category.id).name;
     }
 
     const deleteClick = (id) => {
@@ -72,14 +85,14 @@ const Product = ({ administrator, product, setCurrentId }) => {
                             <p className="card-text">
                                 <b>Precio: </b>${ product.price }
                                 <br/>
-                                <b>Categoría: </b> { product.category }
+                                <b>Categoría: </b> { categoryName(product.category) }
                                 <br/>
                                 <b>Descripción: </b> { product.description }
                                 <br/>
                                 <b>Creado { fromNowInSpanish(product.createdAt) }</b>
                             </p>
-                            <button className="btn btn-secondary mt-1 mr-1" onClick={() => setCurrentId(product._id)}><i className="fa fa-pencil" aria-hidden="true"></i></button>
-                            <button className="btn btn-danger mt-1 mr-1" onClick={() => deleteClick(product._id)}><i className="fa fa-trash" aria-hidden="true"></i></button>
+                            <button className="btn btn-edit mt-1 mr-1" onClick={() => setCurrentId(product._id)}><i className="fa fa-pencil" aria-hidden="true"></i></button>
+                            <button className="btn btn-remove mt-1 mr-1" onClick={() => deleteClick(product._id)}><i className="fa fa-trash" aria-hidden="true"></i></button>
                         </div>
                     }
                 </div>
