@@ -23,17 +23,32 @@ const Home = () =>  {
                         <div id="posts">
                             <div id="post1" className="post" style={{ backgroundColor: '#f48071', backgroundImage: 'url(' + chorizos + ')', backgroundSize: 'cover', backgroundPosition: 'center' }}>
                                 <div className="postDiv">
-                                    Recetas
+                                    <h4>Recetas</h4>
+                                    <p>
+                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse accusantium incidunt 
+                                        alias, magnam cupiditate, ad est nemo ex voluptas nulla animi iste voluptatum facilis 
+                                        porro natus ipsum assumenda asperiores dolore.
+                                    </p>
                                 </div>
                             </div>
                             <div id="post2" className="post" style={{ backgroundColor: '#f04e39', backgroundImage: 'url(' + lomo + ')', backgroundSize: 'cover', backgroundPosition: 'center' }}>
                                 <div className="postDiv">
-                                    Menú
+                                    <h4>Menú</h4>
+                                    <p>
+                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse accusantium incidunt 
+                                        alias, magnam cupiditate, ad est nemo ex voluptas nulla animi iste voluptatum facilis 
+                                        porro natus ipsum assumenda asperiores dolore.
+                                    </p>
                                 </div>
                             </div>
                             <div id="post3" className="post" style={{ backgroundColor: '#771a15', backgroundImage: 'url(' + tocineta + ')', backgroundSize: 'cover', backgroundPosition: 'center' }}>
                                 <div className="postDiv">
-                                    Reconocimientos
+                                    <h4>Reconocimientos</h4>
+                                    <p>
+                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse accusantium incidunt 
+                                        alias, magnam cupiditate, ad est nemo ex voluptas nulla animi iste voluptatum facilis 
+                                        porro natus ipsum assumenda asperiores dolore.
+                                    </p>
                                 </div>
                             </div>
                         </div>

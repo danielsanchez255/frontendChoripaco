@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/img/logo_crema.png';
-import decode from 'jwt-decode'
+import decode from 'jwt-decode';
+
+import Swal from "sweetalert2"; 
 
 import { useDispatch } from 'react-redux';
 
@@ -17,7 +19,6 @@ const Sidebar = () => {
 
     useEffect(() => {
         const token = user?.token;
-        //console.log("Location: ", location);
         if (token != undefined || token != null) {
             if (token) {
                 const decodedToken = decode(token);
@@ -31,7 +32,20 @@ const Sidebar = () => {
     });
 
     const logout = () => {
-        dispatch({ type: 'LOGOUT' });
+        Swal.fire({
+            title: 'Eliminar producto',
+            text: '¿Deseas cerrar sesión?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: 'green',
+            cancelButtonColor: 'yellow',
+            confirmButtonText: 'Confirmar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {        
+                dispatch({ type: 'LOGOUT' });
+            }
+        });
 
         navigate('/');
 
@@ -41,6 +55,9 @@ const Sidebar = () => {
     return (
         <>
             <div className="wrapper">
+                <button type="button" id="sidebarCollapse" className="btn sidebarCollapse">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
                 <nav id="sidebar">
                     <div className="sidebar-header">
                         <img className="headerImage" src={ logo } srcSet={ logo } alt="logo" />
