@@ -81,7 +81,7 @@ const ProductForm = ({ currentId, setCurrentId }) => {
                                 type="number" 
                                 className="form-field" 
                                 aria-describedby="priceHelp" 
-                                placeholder="Precio del producto"
+                                placeholder="Precio"
                                 value={postData.price} 
                                 onChange={(e) => setPostData({ ...postData ,price: e.target.value })} 
                             />

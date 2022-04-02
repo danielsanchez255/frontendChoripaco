@@ -81,7 +81,7 @@ const Product = ({ administrator, product, setCurrentId }) => {
                             </div>
                         :
                         <div className="card-body">
-                            <h5 className="card-title text-dark">{ product.name }</h5>
+                            <h6 className="card-title text-dark">{ product.name }</h6>
                             <p className="card-text">
                                 <b>Precio: </b>${ product.price }
                                 <br/>

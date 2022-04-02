@@ -18,6 +18,7 @@ const Sidebar = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
+
         const token = user?.token;
         if (token != undefined || token != null) {
             if (token) {
@@ -33,7 +34,7 @@ const Sidebar = () => {
 
     const logout = () => {
         Swal.fire({
-            title: 'Eliminar producto',
+            title: 'Cerrar sesión',
             text: '¿Deseas cerrar sesión?',
             icon: 'warning',
             showCancelButton: true,
@@ -44,18 +45,16 @@ const Sidebar = () => {
         }).then((result) => {
             if (result.isConfirmed) {        
                 dispatch({ type: 'LOGOUT' });
+                navigate('/');
+                setUser(null);
             }
         });
-
-        navigate('/');
-
-        setUser(null);
     }
 
     return (
         <>
             <div className="wrapper">
-                <button type="button" id="sidebarCollapse" className="btn sidebarCollapse">
+                <button type="button" id="sidebarCollapse" className="btn sidebarCollapse mb-5">
                     <i class="fa fa-bars" aria-hidden="true"></i>
                 </button>
                 <nav id="sidebar">
@@ -100,7 +99,7 @@ const Sidebar = () => {
                     <hr/>
                     <ul className="list-unstyled CTAs">
                         <li>
-                            <a href="" type="button" className="article" onClick={logout}>Cerrar sesión</a>
+                            <a type="button" className="article" onClick={logout}>Cerrar sesión</a>
                         </li>
                     </ul>
                 </nav>

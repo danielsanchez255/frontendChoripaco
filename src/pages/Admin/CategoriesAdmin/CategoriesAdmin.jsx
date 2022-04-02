@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 //Components
-import ProductForm from '../../../components/CategoryForm/CategoryForm.jsx';
+import CategoryForm from '../../../components/CategoryForm/CategoryForm.jsx';
 /* import Products from '../../../components/Products/Products.jsx'; */
 import Sidebar from '../../../components/Sidebar/Sidebar.jsx';
 
@@ -25,8 +25,9 @@ const CategoriesAdmin = () =>  {
         <>
             <Sidebar />
             <div className="container">
-                <div className="row">
+                <div className="row pt-4">
                     <div className="col-md-7 mt-5 offset-md-2">
+                        <h3 className="titleProducts">Categorías</h3>
                         <ul className="list-group">
                             {
                                 !categories.length ? <div className="d-flex justify-content-center">
@@ -49,7 +50,7 @@ const CategoriesAdmin = () =>  {
                         </ul>
                     </div>
                     <div className="col-md-3 mt-5">
-                        <ProductForm currentId={currentId} setCurrentId={setCurrentId} />
+                        <CategoryForm currentId={currentId} setCurrentId={setCurrentId} />
                     </div>
                 </div>
             </div>

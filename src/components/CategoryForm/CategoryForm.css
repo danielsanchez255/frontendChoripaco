@@ -13,3 +13,11 @@
 .form-field:focus {
     border-color: #0f7ef1;
 }
+
+.btn-category {
+    background-color: #ae2a18;
+    color: #fff;
+    border-radius: 50px;
+    font-weight: bold;
+    width: 100%;
+}

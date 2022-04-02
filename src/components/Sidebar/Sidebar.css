@@ -30,6 +30,7 @@ a:focus {
     width: 100%;
     align-items: stretch;
     position: fixed;
+    z-index: 9999;
 }
 
 #sidebar {
@@ -136,6 +137,7 @@ a.article,
 a.article:hover {
     background: #181e1c !important;
     color: #fff !important;
+    cursor: pointer;
 }
 
 .headerImage {

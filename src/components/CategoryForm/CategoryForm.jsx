@@ -48,7 +48,7 @@ const CategoryForm = ({ currentId, setCurrentId }) => {
                     />
                     <small id="nameHelp" className="form-text text-muted">No se ha ingresado el nombre.</small>
                 </div>
-                <button type="submit" className="btn btn-primary">Crear</button>
+                <button type="submit" className="btn btn-category">Crear</button>
             </form>
         </>
     );

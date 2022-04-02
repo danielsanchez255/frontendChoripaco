@@ -11,6 +11,8 @@ import chorizos from '../../assets/img/chorizos.png';
 import lomo from '../../assets/img/lomo.png';
 import tocineta from '../../assets/img/tocineta.png';
 
+const imageURL = 'https://www.comedera.com/wp-content/uploads/2021/03/shutterstock_1379830838-huevos-con-chorizo.jpg';
+
 
 const Home = () =>  {
 
@@ -21,7 +23,7 @@ const Home = () =>  {
                 <div className="content">
                     <div id="mainDiv">
                         <div id="posts">
-                            <div id="post1" className="post" style={{ backgroundColor: '#f48071', backgroundImage: 'url(' + chorizos + ')', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                            <div id="post1" className="post" style={{ backgroundColor: '#f48071', backgroundImage: 'url(' + imageURL + ')', backgroundSize: 'cover', backgroundPosition: 'center' }}>
                                 <div className="postDiv">
                                     <h4>Recetas</h4>
                                     <p>
