@@ -11,10 +11,24 @@ import chorizos from '../../assets/img/chorizos.png';
 import lomo from '../../assets/img/lomo.png';
 import tocineta from '../../assets/img/tocineta.png';
 
+import Swal from "sweetalert2"; 
+
 const imageURL = 'https://www.comedera.com/wp-content/uploads/2021/03/shutterstock_1379830838-huevos-con-chorizo.jpg';
 
 
 const Home = () =>  {
+
+    const moreClick = () => {
+        Swal.fire({
+            title: 'Próximamente',
+            text: 'Sitio en construcción',
+            icon: 'success',
+            showCancelButton: true,
+            confirmButtonColor: 'green',
+            confirmButtonText: 'Continuar',
+            showCancelButton: false,
+        });
+    }
 
     return (
         <>
@@ -36,7 +50,7 @@ const Home = () =>  {
                                         Pariatur fugit a ullam rem eum sunt aut ad eligendi quod neque, 
                                         tempora, ea cum magnam ipsam perferendis et illum quibusdam aliquam.
                                         <br/>
-                                        <button className="btn btn-more mt-2">Ir a recetas</button>
+                                        <button className="btn btn-more mt-2" onClick={() => moreClick()}>Ir a recetas</button>
                                     </p>
                                 </section>
 
@@ -45,18 +59,18 @@ const Home = () =>  {
                                     <div class="circleImage circleImage-right">
                                         <span class="helper"></span><img src={tocineta} />
                                     </div>
-                                    <p className="text-section text-section-left" style={{ borderLeft: '1px solid #f04e39', paddingLeft: '15px' }}>
+                                    <p className="text-section text-section-left text-white" style={{ borderLeft: '1px solid #f04e39', paddingLeft: '15px' }}>
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                                         Pariatur fugit a ullam rem eum sunt aut ad eligendi quod neque, 
                                         tempora, ea cum magnam ipsam perferendis et illum quibusdam aliquam.
                                         <br/>
-                                        <button className="btn btn-more mt-2">Ir al menú</button>
+                                        <button className="btn btn-more mt-2" onClick={() => moreClick()}>Ir al menú</button>
                                     </p>
                                 </section>
 
                                 <section className="content-section">
                                     <h1 className="text-uppercase title-acknowledgments">Reconocimientos</h1>
-                                    <p className="text-section-acknowledgments text-section-center">
+                                    <p className="text-section-acknowledgments text-section-center text-white">
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                                         Pariatur fugit a ullam rem eum sunt aut ad eligendi quod neque, 
                                         tempora, ea cum magnam ipsam perferendis et illum quibusdam aliquam.

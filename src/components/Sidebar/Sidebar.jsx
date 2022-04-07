@@ -38,8 +38,8 @@ const Sidebar = () => {
             text: '¿Deseas cerrar sesión?',
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: 'green',
-            cancelButtonColor: 'yellow',
+            confirmButtonColor: '#f04e39',
+            cancelButtonColor: '#181e1c',
             confirmButtonText: 'Confirmar',
             cancelButtonText: 'Cancelar'
         }).then((result) => {
