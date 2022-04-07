@@ -21,40 +21,62 @@ const Home = () =>  {
             <div style={{ backgroundImage: 'url(' + background + ')', backgroundSize: 'cover', backgroundAttachment: 'fixed' }}>
                 <Header />
                 <div className="content">
-                    <div id="mainDiv">
-                        <div id="posts">
-                            <div id="post1" className="post" style={{ backgroundColor: '#f48071', backgroundImage: 'url(' + imageURL + ')', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                                <div className="postDiv">
-                                    <h4>Recetas</h4>
-                                    <p>
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse accusantium incidunt 
-                                        alias, magnam cupiditate, ad est nemo ex voluptas nulla animi iste voluptatum facilis 
-                                        porro natus ipsum assumenda asperiores dolore.
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-12">
+                                {/* <h1 className="mt-5">Ingresa a nuestra tienda</h1> */}
+
+                                <section className="content-section">
+                                    <h1 className="text-uppercase titles text-section-right">Recetas</h1>
+                                    <div class="circleImage">
+                                        <span class="helper"></span><img src={chorizos} />
+                                    </div>
+                                    <p className="text-section text-section-right text-white" style={{ borderRight: '1px solid #f04e39', paddingRight: '15px' }}>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                        Pariatur fugit a ullam rem eum sunt aut ad eligendi quod neque, 
+                                        tempora, ea cum magnam ipsam perferendis et illum quibusdam aliquam.
+                                        <br/>
+                                        <button className="btn btn-more mt-2">Ir a recetas</button>
                                     </p>
-                                </div>
-                            </div>
-                            <div id="post2" className="post" style={{ backgroundColor: '#f04e39', backgroundImage: 'url(' + lomo + ')', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                                <div className="postDiv">
-                                    <h4>Menú</h4>
-                                    <p>
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse accusantium incidunt 
-                                        alias, magnam cupiditate, ad est nemo ex voluptas nulla animi iste voluptatum facilis 
-                                        porro natus ipsum assumenda asperiores dolore.
+                                </section>
+
+                                <section className="content-section">
+                                    <h1 className="text-uppercase titles">Menú</h1>
+                                    <div class="circleImage circleImage-right">
+                                        <span class="helper"></span><img src={tocineta} />
+                                    </div>
+                                    <p className="text-section text-section-left" style={{ borderLeft: '1px solid #f04e39', paddingLeft: '15px' }}>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                        Pariatur fugit a ullam rem eum sunt aut ad eligendi quod neque, 
+                                        tempora, ea cum magnam ipsam perferendis et illum quibusdam aliquam.
+                                        <br/>
+                                        <button className="btn btn-more mt-2">Ir al menú</button>
                                     </p>
-                                </div>
-                            </div>
-                            <div id="post3" className="post" style={{ backgroundColor: '#771a15', backgroundImage: 'url(' + tocineta + ')', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                                <div className="postDiv">
-                                    <h4>Reconocimientos</h4>
-                                    <p>
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse accusantium incidunt 
-                                        alias, magnam cupiditate, ad est nemo ex voluptas nulla animi iste voluptatum facilis 
-                                        porro natus ipsum assumenda asperiores dolore.
+                                </section>
+
+                                <section className="content-section">
+                                    <h1 className="text-uppercase title-acknowledgments">Reconocimientos</h1>
+                                    <p className="text-section-acknowledgments text-section-center">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                        Pariatur fugit a ullam rem eum sunt aut ad eligendi quod neque, 
+                                        tempora, ea cum magnam ipsam perferendis et illum quibusdam aliquam.
+                                        <hr className="mt-3" style={{ width: '15vw' }}/>
+                                        <div className="row mt-5">
+                                            <div className="col-md-4 text-center">
+                                                <img src={lomo} className="mt-2" width="100%" />
+                                            </div>
+                                            <div className="col-md-4 text-center">
+                                                <img src={lomo} className="mt-2" width="100%" />
+                                            </div>
+                                            <div className="col-md-4 text-center">
+                                                <img src={lomo} className="mt-2" width="100%" />
+                                            </div>
+                                        </div>
                                     </p>
-                                </div>
+                                </section>
                             </div>
                         </div>
-                    </div>
+                    </div>                    
                 </div>
                 <Footer />
             </div>       
