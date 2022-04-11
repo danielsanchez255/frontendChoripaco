@@ -101,19 +101,10 @@ h1 {
     }
 
     .circleImage {
-        height: 20rem;
-        width: 20rem;
-    }
-
-    .circleImage {
-        height: 20rem;
-        width: 20rem;
-        border: 1px solid grey;
-        white-space: nowrap;
-        border-radius: 50rem;
-        text-align: center;
-        overflow:hidden;
-        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
     }
     
     .circleImage-right {
