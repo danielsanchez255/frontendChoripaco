@@ -12,10 +12,15 @@ import "./Sidebar.css";
 const Sidebar = () => {
 
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+    const [isActive, setActive] = useState(false);
 
     const dispatch = useDispatch();
     const location = useLocation();
     const navigate = useNavigate();
+
+    const toggleClass = () => {
+        setActive(!isActive);
+    };
 
     useEffect(() => {
 
@@ -54,10 +59,10 @@ const Sidebar = () => {
     return (
         <>
             <div className="wrapper">
-                <button type="button" id="sidebarCollapse" className="btn sidebarCollapse mb-5">
+                <button type="button" id="sidebarCollapse" className="btn sidebarCollapse mb-5" onClick={toggleClass}>
                     <i class="fa fa-bars" aria-hidden="true"></i>
                 </button>
-                <nav id="sidebar">
+                <nav id="sidebar" className={isActive ? 'active': null}>
                     <div className="sidebar-header">
                         <img className="headerImage" src={ logo } srcSet={ logo } alt="logo" />
                     </div>
