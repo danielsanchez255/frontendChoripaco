@@ -37,7 +37,7 @@ const Product = ({ administrator, product, setCurrentId }) => {
     }
 
     const categoryName = (category) => {
-        return categories.find(item => item.id === category.id).name;
+        return categories.find(item => item._id === category).name;
     }
 
     const deleteClick = (id) => {

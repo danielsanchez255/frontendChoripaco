@@ -15,7 +15,6 @@ import Swal from "sweetalert2";
 
 const imageURL = 'https://www.comedera.com/wp-content/uploads/2021/03/shutterstock_1379830838-huevos-con-chorizo.jpg';
 
-
 const Home = () =>  {
 
     const moreClick = () => {

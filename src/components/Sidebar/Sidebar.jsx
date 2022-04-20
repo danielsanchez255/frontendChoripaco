@@ -38,6 +38,13 @@ const Sidebar = () => {
     });
 
     const logout = () => {
+           
+        dispatch({ type: 'LOGOUT' });
+        navigate('/');
+        setUser(null);
+    }
+
+    const logoutButton = () => {
         Swal.fire({
             title: 'Cerrar sesión',
             text: '¿Deseas cerrar sesión?',
@@ -104,7 +111,7 @@ const Sidebar = () => {
                     <hr/>
                     <ul className="list-unstyled CTAs">
                         <li>
-                            <a type="button" className="article" onClick={logout}>Cerrar sesión</a>
+                            <a type="button" className="article" onClick={logoutButton}>Cerrar sesión</a>
                         </li>
                     </ul>
                 </nav>

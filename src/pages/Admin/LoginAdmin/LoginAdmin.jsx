@@ -41,7 +41,7 @@ const LoginAdmin = () =>  {
                                 </div>
 
                                 <div className="form-outline mb-4">
-                                    <input type="email" name="email" className="form-field" placeholder="Ingrese el email" onChange={handleChange} />
+                                    <input type="email" name="email" className="form-field" placeholder="Ingrese el email" onChange={handleChange} autoComplete={true} />
                                     <label className="form-label mt-1" htmlFor="form3Example3">Email inválido</label>
                                 </div>
 

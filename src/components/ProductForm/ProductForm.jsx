@@ -92,7 +92,6 @@ const ProductForm = ({ currentId, setCurrentId }) => {
                 <div className="form-group">
                     <select 
                         className="form-field"
-                        value={postData.category} 
                         onChange={(e) => setPostData({ ...postData ,category: e.target.value })} 
                     >
                         {

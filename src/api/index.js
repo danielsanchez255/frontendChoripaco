@@ -16,7 +16,7 @@ export const signIn = (formData) => API.post('users/signin', formData);
 
 const urlForProducts = '/products';
 
-export const fetchProducts  = () => API.get(urlForProducts);
+export const fetchProducts  = () => API.get(urlForProducts).catch((error) => console.log("Error: ", error));
 export const createProduct = (newProduct) => API.post(urlForProducts, newProduct);
 export const updateProduct = (id, updateProduct) => API.patch(`${urlForProducts}/${id}`, updateProduct);
 export const deleteProduct = (id) => API.delete(`${urlForProducts}/${id}`);
