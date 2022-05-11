@@ -40,6 +40,13 @@ const ProductForm = ({ currentId, setCurrentId }) => {
 
     return (
         <>
+            {
+                currentId ? 
+                    <button className="btn btnCreateProduct" onClick={() => clear()}>Crear</button> 
+                : 
+                    <></>
+
+            }
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <h5>Formulario del producto: </h5>
@@ -89,24 +96,32 @@ const ProductForm = ({ currentId, setCurrentId }) => {
                         </div>
                     </div>
                 </div>
-                <div className="form-group">
-                    <select 
-                        className="form-field"
-                        onChange={(e) => setPostData({ ...postData ,category: e.target.value })} 
-                    >
-                        {
-                            !categories.length ? <option value="null">
-                                                    No hay categorías disponibles
-                                                </option>  : 
-                                categories.map((category) => (
-                                    <option value={category._id}>
-                                        {category.name}
-                                    </option>
-                                ))
-                                 
-                        }
-                    </select>
-                </div>
+
+                {
+                    currentId ? 
+                        <span>Modificar</span> 
+                    : 
+                        <div className="form-group">
+                            <select 
+                                className="form-field"
+                                onChange={(e) => setPostData({ ...postData ,category: e.target.value })} 
+                            >
+                                {
+                                    !categories.length ? <option value="null">
+                                                            No hay categorías disponibles
+                                                        </option>  : 
+                                        categories.map((category) => (
+                                            <option value={category._id}>
+                                                {category.name}
+                                            </option>
+                                        ))
+                                        
+                                }
+                            </select>
+                        </div>
+                }
+
+                
                 <div className="form-group">
                     <textarea 
                         className="form-field-area" 
@@ -122,7 +137,14 @@ const ProductForm = ({ currentId, setCurrentId }) => {
                         <label class="custom-file-label" for="inputGroupFile01">Elegir archivo</label>
                     </div>
                 </div>
-                <button type="submit" className="btn btn-product mb-2">Crear</button>
+                <button type="submit" className="btn btn-product mb-2">
+                {
+                    currentId ? 
+                        <span>Modificar</span> 
+                    : 
+                        <span>Crear</span> 
+                }
+                </button>
             </form>
         </>
     );
